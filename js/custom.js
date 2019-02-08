@@ -208,8 +208,8 @@ jQuery(document).ready(function(){
 	// Needed variables
 	var $map 				= $('#map'),
 		$tabContactClass 	= ('tab-contact'),
-		$lat 				= '23.924583',
-		$lon 				= '90.720028';
+		$lat 				= '23.758478',
+		$lon 				= '90.4016989';
 
 	$map.gmap().bind('init', function(ev, map) {
 		$map.gmap('addMarker', {'position': $lat +','+ $lon  , 'bounds': true}).click(function() {
@@ -220,7 +220,7 @@ jQuery(document).ready(function(){
             'maxHeight': 150
          }, this);
 		});
-		$map.gmap('option', 'zoom', 16);
+		$map.gmap('option', 'zoom', 15.33);
 	});
 
 	// Refresh Map
