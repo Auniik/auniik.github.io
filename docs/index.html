@@ -4,33 +4,74 @@
 	<title>DOCS</title>
 	<style type="text/css">
 		img{
-			height: 20px
+			height: 30px
 		}
 	</style>
 </head>
 <body>
 
 	<div>
-		<form onsubmit="login">
+		<form>
 			<input type="email" id="email" value="auniik97@gmail.com" readonly="">
 			<input type="password" id="password">
 			<input type="submit" value="login">
 		</form>
 		
-	</div><br><br><br><br>
-	<div style="display:flex" id="block">
+	</div>
+	<div style="display:none" id="block">
 		<br><br>
-		<ul>
-			<li><a href="/docs/me.png"><img src="/docs/me.png"> My Photo</a></li>
-			<li><a href="/docs/mynid.JPEG"><img src="/docs/mynid.JPEG"> My NID</a></li>
-			<li><a href="/docs/mother.jpg"><img src="/docs/mother.jpg"> Mother's Photo</a></li>
-			<li><a href="/docs/mothersnid.jpg"><img src="/docs/mothersnid.jpg"> Mothers NID</a></li>
-		</ul>
-		<a href="logout">Logout</a>
+		<ol>
+			<li>--- <a href="/docs/me.png" target="_blank"><img src="/docs/me.png"> My Photo</a></li>
+			<li>--- <a href="/docs/mother.jpg" target="_blank"><img src="/docs/mother.jpg"> M's Photo</a></li>
+			<li>--- <a href="/docs/joiningletter.jpg" target="_blank"><img src="/docs/joiningletter.jpg"> J L</a></li>
+			<li>--- <a href="/docs/mynid.JPEG" target="_blank"><img src="/docs/mynid.JPEG"> NID</a></li>
+			<li>--- <a href="/docs/bc.jpg" target="_blank"><img src="/docs/bc.jpg"> Birth certificate</a></li>
+			<li>--- <a href="/docs/verifiedpaper.jpg" target="_blank"><img src="/docs/verifiedpaper.jpg"> Certification
+				Letter</a></li>
+			<li>--- <a href="/docs/mothersnid.jpg" target="_blank"><img src="/docs/mothersnid.jpg"> M's NID</a></li>
+		</ol>
+		<br><br>
+		<button id="logout">LOGOUT</button>
 	</div>
 
+
 	<script type="text/javascript">
-		
+		let form_el = document.querySelector('form');
+		let password = document.querySelector('#password');
+		let logoutBtn = document.querySelector('#logout');
+		let block = document.querySelector('#block');
+
+
+		form_el.addEventListener("submit", function(evt) {
+			evt.preventDefault();
+			auth();
+		});
+
+		function auth() {
+
+			if (password.value === 'xngt1'){
+				clearPassword()
+				form_el.setAttribute('style', 'display:none')
+				authorize()
+			}
+		}
+
+		function authorize() {
+			block.setAttribute('style', 'display:block')
+		}
+
+
+		logoutBtn.addEventListener("click", function(evt) {
+			block.setAttribute('style', 'display:none')
+			form_el.setAttribute('style', 'display:block')
+		});
+
+		function clearPassword(){
+			password.value = ''
+		}
+		function toggleForm(){
+
+		}
 
 		
 	</script>
