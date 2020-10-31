@@ -206,28 +206,34 @@ jQuery(document).ready(function(){
 	/* ---------------------------------------------------------------------- */
 	
 	// Needed variables
-	var $map 				= $('#map'),
-		$tabContactClass 	= ('tab-contact'),
-		$lat 				= '23.758478',
-		$lon 				= '90.4016989';
+	// var $map 				= $('#map'),
+	// 	$tabContactClass 	= ('tab-contact'),
+	// 	$lat 				= '23.8211588',
+	// 	$lon 				= '90.348347';
 
-	$map.gmap().bind('init', function(ev, map) {
-		$map.gmap('addMarker', {'position': $lat +','+ $lon  , 'bounds': true}).click(function() {
-			$map.gmap('openInfoWindow', {
-            'content': 'Hello everyone! Please refer to the contact<br />form below and send me a message!',
-            'autoscroll': true,
-            'maxWidth': 350,
-            'maxHeight': 150
-         }, this);
-		});
-		$map.gmap('option', 'zoom', 15.33);
+	// $map.gmap().bind('init', function(ev, map) {
+	// 	$map.gmap('addMarker', {'position': $lat +','+ $lon  , 'bounds': true}).click(function() {
+	// 		$map.gmap('openInfoWindow', {
+    //         'content': 'Hello everyone! Please refer to the contact<br />form below and send me a message!',
+    //         'autoscroll': true,
+    //         'maxWidth': 350,
+    //         'maxHeight': 150
+    //      }, this);
+	// 	});
+	// 	$map.gmap('option', 'zoom', 15.33);
+	// });
+
+	// // Refresh Map
+	// $content.bind('easytabs:after', function(evt,tab,panel) {
+	// 	$map.gmap('refresh'); 
+  	// });
+
+
+	new GMaps({
+		div: '#map',
+		lat: -12.043333,
+		lng: -77.028333
 	});
-
-	// Refresh Map
-	$content.bind('easytabs:after', function(evt,tab,panel) {
-		$map.gmap('refresh'); 
-  	});
-
       
   
 
