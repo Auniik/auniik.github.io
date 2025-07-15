@@ -186,11 +186,9 @@
                                         
                 <!-- Projects -->
                 <section id="projects">
-                    <div class="listings-section">
-                        <h3 class="main-heading">Projects</h3>
-                        <ul class="timeline" id="projects-timeline">
-                        </ul>
-                    </div>
+                    <h3 class="main-heading">Projects</h3>
+                    <ul id="projects-timeline">
+                    </ul>
                 </section>
                 <!-- /Projects -->
                 <!-- Papers -->
@@ -217,25 +215,26 @@
                     <!-- /Contact Info -->
                     
                     <!-- Contact Form -->
-                    <!-- <div class="contact-form">
+                    <div class="contact-form">
                         <h3 class="main-heading"><span>Let's keep in touch</span></h3>
                         <div id="contact-status"></div>
-                        <form action="" id="contactform">
-                            <p>
+                        <form id="contactform" action="https://formspree.io/f/xrblgpgk" method="POST">
+                            <!-- <p>
                             	<label for="name">Your Name</label>
                             	<input type="text" id="name" class="input" >
-                            </p>
+                            </p> -->
                             <p>
                             	<label for="email">Your Email</label>
-                            	<input type="text" id="email" class="input">
+                            	<input type="text" name="email" id="email" class="input">
                             </p>
                             <p>
                             	<label for="message">Your Message</label>
-                                <textarea id="message" cols="88" rows="6" class="textarea" ></textarea>
+                                <textarea id="message" name="message" cols="88" rows="6" class="textarea" ></textarea>
                             </p>
-                            <input type="submit" name="submit" value="Send your message" class="button transition">
+                            <button id="my-form-button" class="button transition">Send your message</button> <span id="my-form-status"></span>
                         </form>
-                    </div> -->
+                        
+                    </div>
                     <!-- /Contact Form -->
                 </section>
                 <!-- /contact -->  

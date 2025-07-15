@@ -483,6 +483,101 @@ header
 	overflow: hidden;
 	padding: 40px 20px;
 }
+
+/* Minimal Project Cards */
+.project-card {
+	background: #fff;
+    border-left: 1px solid #fdc750;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.2s ease;
+}
+
+.project-card:hover {
+	border-left-color: #333;
+	transform: translateX(5px);
+}
+
+.project-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	margin-bottom: 8px;
+}
+
+.project-title {
+	font-size: 16px;
+	font-weight: 600;
+	color: #333;
+	margin: 0;
+}
+
+.project-type {
+	background: #f5f5f5;
+	color: #666;
+	padding: 2px 8px;
+	font-size: 10px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.project-company {
+	color: #999;
+	font-size: 12px;
+	margin-bottom: 6px;
+}
+
+.project-impact {
+	background: linear-gradient(135deg, #fff8e1 0%, #fffdf7 100%);
+    color: #e65100;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 12px;
+    margin: 8px 0;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.project-impact::before {
+	content: "📊";
+	margin-right: 6px;
+}
+
+.project-responsibility {
+	color: #555;
+	font-size: 12px;
+	line-height: 1.5;
+	margin: 8px 0;
+	padding: 8px 0;
+	border-top: 1px solid #f0f0f0;
+	font-style: italic;
+}
+
+.project-hook {
+	color: #666;
+	font-size: 13px;
+	line-height: 1.4;
+	margin-bottom: 10px;
+}
+
+.tech-stack {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	margin-top: 8px;
+}
+
+.tech-badge {
+	background: #f8f8f8;
+    color: #666;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
 #projects-list
 {
 	overflow: hidden;

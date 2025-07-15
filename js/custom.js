@@ -183,27 +183,59 @@ jQuery(document).ready(function() {
 	var $contactform 	= $('#contactform'),
 		$success		= 'Your message has been sent. Thank you!';
 		
-	$contactform.submit(function(){
-		$.ajax({
-		   type: "POST",
-		   url: "php/contact.php",
-		   data: $(this).serialize(),
-		   success: function(msg)
-		   {
-				if(msg == 'SEND'){
-					response = '<div class="success">'+ $success +'</div>';
-				}
-				else{
-					response = '<div class="error">'+ msg +'</div>';
-				}
-				// Hide any previous response text
-				$(".error,.success").remove();
-				// Show response message
-				$contactform.prepend(response);
+	// $contactform.submit(function(){
+	// 	$.ajax({
+	// 	   type: "POST",
+	// 	   url: "php/contact.php",
+	// 	   data: $(this).serialize(),
+	// 	   success: function(msg)
+	// 	   {
+	// 			if(msg == 'SEND'){
+	// 				response = '<div class="success">'+ $success +'</div>';
+	// 			}
+	// 			else{
+	// 				response = '<div class="error">'+ msg +'</div>';
+	// 			}
+	// 			// Hide any previous response text
+	// 			$(".error,.success").remove();
+	// 			// Show response message
+	// 			$contactform.prepend(response);
+	// 		}
+	// 	 });
+	// 	return false;
+	// });	
+
+	var form = document.getElementById("contactform");
+  
+	async function handleSubmit(event) {
+		event.preventDefault();
+		var status = document.getElementById("my-form-status");
+		var data = new FormData(event.target);
+		
+		fetch(event.target.action, {
+			method: form.method,
+			body: data,
+			headers: {
+				'Accept': 'application/json'
 			}
-		 });
-		return false;
-	});	
+		}).then(response => {
+			if (response.ok) {
+				status.innerHTML = "Thanks for your submission!";
+				form.reset()
+			} else {
+				response.json().then(data => {
+				if (Object.hasOwn(data, 'errors')) {
+					status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+				} else {
+					status.innerHTML = "Oops! There was a problem submitting your form"
+				}
+				})
+			}
+		}).catch(error => {
+			status.innerHTML = "Oops! There was a problem submitting your form"
+		});
+	}
+	form.addEventListener("submit", handleSubmit)
 	/* ---------------------------------------------------------------------- */
 	/*	Google Maps
 	/* ---------------------------------------------------------------------- */
@@ -232,11 +264,11 @@ jQuery(document).ready(function() {
   	// });
 
 
-	new GMaps({
-		div: '#map',
-		lat: -12.043333,
-		lng: -77.028333
-	});
+	// new GMaps({
+	// 	div: '#map',
+	// 	lat: -12.043333,
+	// 	lng: -77.028333
+	// });
       
   
 

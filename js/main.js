@@ -102,18 +102,31 @@ document.addEventListener("DOMContentLoaded", function () {
   function loadProjects(projects) {
     const projectList = projects
       .map(
-        (proj) => `
-        <li>
-            <div class="timelineUnit">
-                <h4>${proj.title}<span class="timelineDate">${proj.duration || proj.category}</span></h4>
-                <h5>${proj.company || ""}</h5>
-                <p><strong>Description:</strong> ${proj.description}</p>
-                ${proj.responsibility ? `<p><strong>Responsibility:</strong> ${proj.responsibility}</p>` : ""}
-                ${proj.technology ? `<p><strong>Technology:</strong> ${proj.technology}</p>` : ""}
-                ${proj.link ? `<p><strong>Link:</strong> <a href='${proj.link}' target='_blank'>${proj.link}</a></p>` : ""}
-                ${proj.visit_site ? `<p><strong>Visit Site:</strong> <a href='${proj.visit_site}' target='_blank'>${proj.visit_site}</a></p>` : ""}
+        (proj) => {
+          // Generate simple tech badges (limit to 3-4 key technologies)
+          const techBadges = proj.tech_stack ? proj.tech_stack.map(tech => 
+            `<span class="tech-badge">${tech}</span>`
+          ).join('') : '';
+
+          return `
+            <div class="project-card">
+              <div class="project-header">
+                <h3 class="project-title">${proj.title}</h3>
+                ${proj.type ? `<span class="project-type">${proj.type}</span>` : ''}
+              </div>
+              
+              ${proj.company ? `<div class="project-company">${proj.company} • ${proj.year || proj.category}</div>` : ''}
+              
+              ${proj.impact ? `<div class="project-impact">${proj.impact}</div>` : ''}
+              
+              ${proj.hook ? `<div class="project-hook">${proj.hook}</div>` : ''}
+              
+              ${proj.responsibility ? `<div class="project-responsibility"><strong>Responsibility:</strong> ${proj.responsibility}</div>` : ''}
+              
+              ${techBadges ? `<div class="tech-stack">${techBadges}</div>` : ''}
             </div>
-        </li>`
+          `;
+        }
       )
       .join("");
 
