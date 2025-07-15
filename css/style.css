@@ -612,10 +612,10 @@ header
    float: left;
 	margin-bottom: 30px;
 }
-.timeline li
+/* .timeline li
 {
    float: left;
-}
+} */
 .timeline li .left
 {
    width:470px;

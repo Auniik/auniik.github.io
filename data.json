@@ -1,0 +1,496 @@
+{
+  "site": {
+      "title": "Anik Datta",
+      "header": {
+          "name": "ANIK DATTA",
+          "title": "Software Engineer | AI Enthusiast",
+          "social_text": "ALSO ON"
+      },
+      "footer": {
+          "copyright": "Anik Datta"
+      }
+  },
+  "profile": {
+      "name": "Anik Datta",
+      "title": "Software Engineer",
+      "about": "Experienced internet enthusiast with 5+ years in high-performance backend systems, ML integration, GenAI features, microservices, Agile workflows, DevOps, and software optimization.",
+      "location": "Living and working in Dhaka.",
+      "photo": "images/photo.jpg",
+      "info": {
+          "Name": "Anik Datta",
+          "Alma mater": "Southeast University, Dhaka",
+          "Address": "Mirpur, Dhaka",
+          "Email": "auniikq@gmail.com",
+          "GitHub": "https://github.com/auniik/",
+          "LinkedIn": "https://www.linkedin.com/in/auniik"
+      },
+      "socials": {
+          "GitHub": "https://github.com/auniik",
+          "LinkedIn": "https://www.linkedin.com/in/auniik",
+          "Twitter": "https://www.twitter.com/auniikq",
+          "Facebook": "https://www.facebook.com/auniik"
+      }
+  },
+  "employment": [
+        {
+            "position": "Software Engineer",
+            "duration": "2021 - Running",
+            "company": "Portonics Limited",
+            "url": "https://portonics.com",
+            "description": [
+                "Led GenAI-powered persona-based recommendation service for telco app; delivered 60+ TPS, scaled to 33M+ events/month and 411K+ peak requests/hour via persona segmentation.",
+                "Designed and developed a multimodal vector search API using Vertex AI and a vector database, handling 50+ TPS across text and image inputs.",
+                "Integrated APIs for a FinTech platform with Airtime recharge, Merchant payments, Card management, and Subscription services.",
+                "Optimized microservices using PHP, Node.js, and RabbitMQ, enabling real-time processing for 10M+ daily users.",
+                "Refactored legacy code, implemented CI/CD pipeline, reducing bugs by ~50% and increasing deployment speed.",
+                "Authored API documentation and operational runbooks for internal/external handoffs."
+            ]
+        },
+      {
+          "position": "Full-stack Developer",
+          "duration": "2020 - 2021",
+          "company": "Gain Solutions Ltd.",
+          "url": "https://gain.solutions",
+          "description": [
+                "Engineered a backend email tracking system using Laravel and MySQL, processing 50K+ emails/day. Authored API documentation and integrated alerting systems to ensure reliability.",
+                "Integrated third-party APIs (Mailgun, SES) for high deliverability, achieving a 95%+ success rate.",
+                "Created dynamic list segmentation feature, increasing campaign personalization and CTR by 30%."
+          ]
+      },
+      {
+          "position": "Software Engineer",
+          "duration": "2018 - 2020",
+          "company": "Smart Software Ltd.",
+          "url": "https://www.smartsoftware.com.bd/",
+          "description": [
+            "Built a modular Hospital Management System including Booking, Medical investigations, Pharmacy POS, Accounting, and Reporting.",
+            "Collaborated with medical professionals to build a hospital system adopted by 3+ clinics, resulting in a 40% reduction in administrative workload and 99.8% system uptime."
+          ]
+      },
+      {
+          "position": "Sales Executive",
+          "duration": "2017",
+          "company": "Gemcon Food and Agriculture Products Ltd, Dhaka",
+          "description": [
+            "Gathered knowledge about retail shop strategies, experienced a lot of things about their office management systems, terms, business logics."
+          ]
+      }
+  ],
+  "education": [
+        {
+          "institute": "Southeast University, Dhaka",
+          "duration": "2021 - 2025",
+          "degree": "Bachelor of Science in Computer Science and Engineering",
+          "note": "Graduated in Computer Science and Engineering in May 2025. Minors in Software, Technology"
+      },
+      {
+          "institute": "Dhaka Polytechnic Instute.",
+          "duration": "2014 - 2019",
+          "degree": "Diploma in Engineering with Computer Technology",
+          "note": "Completed in May 2019. Minors in Software, Technology"
+      },
+      {
+          "institute": "Brahmondi K. K. M. Government High School",
+          "duration": "2004 - 2014",
+          "degree": "Secondery in Science",
+          "note": "Areas of concetration: English, Science, Mathematics and Literature."
+      }
+  ],
+  "skills": [
+      
+  ],
+  "projects": [
+    {
+        "class": "website pennapps",
+        "image_link": "projects/web/shahidulislammintu.jpg",
+        "title": "Political Figure Portfolio",
+        "image_src": "projects/web/shahidulislammintu.jpg",
+        "project_title": "Political Figure Portfolio",
+        "category": "Website And Blogging",
+        "visit_site": "http://shahidulmintu.com/",
+        "copyright": "© 2018 Anik Datta",
+        "description": "Visit Site: http://shahidulmintu.com/"
+    },
+    {
+        "class": "website",
+        "image_link": "projects/web/clickartbdca.jpg",
+        "title": "Clipping Path Website",
+        "image_src": "projects/web/clickartbdca.jpg",
+        "project_title": "Clipping Path Portfolio",
+        "category": "Marketing Website",
+        "visit_site": "http://clickartbd.ca/",
+        "copyright": "© 2018 Anik Datta",
+        "description": "Visit Site: http://clickartbd.ca/"
+    },
+    {
+        "class": "website",
+        "image_link": "projects/web/tokiomodeltd.jpg",
+        "title": "Garments Website",
+        "image_src": "projects/web/tokiomodeltd.jpg",
+        "project_title": "Garments Portfolio",
+        "category": "Marketing Website",
+        "visit_site": "http://tokiomodeltd.com/",
+        "copyright": "© 2019 Anik Datta",
+        "description": "Visit Site: http://tokiomodeltd.com/"
+    },
+    {
+        "class": "coursep",
+        "image_link": "projects/Lia/lia.jpg",
+        "title": "Lia",
+        "image_src": "projects/Lia/thumb.jpg",
+        "project_title": "Lia",
+        "category": "Course Project",
+        "visit_site": "",
+        "copyright": "© 2014",
+        "description": "Lia is a linear algebra library and calculator written in Haskell. Supports both vector and matrix calculations."
+    },
+    {
+        "class": "hospitalerp",
+        "image_link": "projects/hospitalerp/dashboard.jpg",
+        "title": "Dashboard",
+        "image_src": "projects/hospitalerp/dashboard.jpg",
+        "project_title": "Dashboard",
+        "category": "Hospital ERP",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "hospitalerp",
+        "image_link": "projects/hospitalerp/outdoor.jpg",
+        "title": "Outdoor",
+        "image_src": "projects/hospitalerp/outdoor.jpg",
+        "project_title": "Outdoor",
+        "category": "Hospital Outdoor",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "hospitalerp",
+        "image_link": "projects/hospitalerp/indoor.jpg",
+        "title": "Indoor",
+        "image_src": "projects/hospitalerp/indoor.jpg",
+        "project_title": "Indoor",
+        "category": "Hospital Admission",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "hospitalerp",
+        "image_link": "projects/hospitalerp/servicesale.jpg",
+        "title": "Service Sale",
+        "image_src": "projects/hospitalerp/servicesale.jpg",
+        "project_title": "Service Sale",
+        "category": "Medical Service Sale",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "hospitalerp",
+        "image_link": "projects/hospitalerp/labmanagement.jpg",
+        "title": "Lab Management",
+        "image_src": "projects/hospitalerp/labmanagement.jpg",
+        "project_title": "Lab Management",
+        "category": "Medical Service Sale",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "hospitalerp",
+        "image_link": "projects/hospitalerp/prescription.jpg",
+        "title": "Prescription",
+        "image_src": "projects/hospitalerp/prescription.jpg",
+        "project_title": "Prescription",
+        "category": "Prescription",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "hospitalerp",
+        "image_link": "projects/hospitalerp/patientmanagement.jpg",
+        "title": "Patient Management",
+        "image_src": "projects/hospitalerp/patientmanagement.jpg",
+        "project_title": "Patient Management",
+        "category": "Patient Management",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "hospitalerp",
+        "image_link": "projects/hospitalerp/discountthroughcard.jpg",
+        "title": "Discount Card Management",
+        "image_src": "projects/hospitalerp/discountthroughcard.jpg",
+        "project_title": "Discount Card Management",
+        "category": "Patient Management",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "hospitalerp",
+        "image_link": "projects/hospitalerp/corporateclientwised_Yl3ck.jpg",
+        "title": "Corporate Client Wise Discount",
+        "image_src": "projects/hospitalerp/corporateclientwised_Yl3ck.jpg",
+        "project_title": "Corporate Client Wise Discount",
+        "category": "Patient Management",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "hospitalerp",
+        "image_link": "projects/hospitalerp/comissionassign.jpg",
+        "title": "Commission Management",
+        "image_src": "projects/hospitalerp/comissionassign.jpg",
+        "project_title": "Commission Management",
+        "category": "Commission Management",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "hospitalerp",
+        "image_link": "projects/hospitalerp/productmanagement.jpg",
+        "title": "Product Management",
+        "image_src": "projects/hospitalerp/productmanagement.jpg",
+        "project_title": "Product Management",
+        "category": "Pharmacy",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "hospitalerp",
+        "image_link": "projects/hospitalerp/pharmacysales.jpg",
+        "title": "Pharmacy Sales",
+        "image_src": "projects/hospitalerp/pharmacysales.jpg",
+        "project_title": "Pharmacy Sales",
+        "category": "Pharmacy",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "hospitalerp",
+        "image_link": "projects/hospitalerp/pharmacypurchase.jpg",
+        "title": "Pharmacy Purchase",
+        "image_src": "projects/hospitalerp/pharmacypurchase.jpg",
+        "project_title": "Pharmacy Purchase",
+        "category": "Pharmacy",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "hospitalerp",
+        "image_link": "projects/hospitalerp/accountdashboard.jpg",
+        "title": "Account Dashboard",
+        "image_src": "projects/hospitalerp/accountdashboard.jpg",
+        "project_title": "Account Dashboard",
+        "category": "Accounts",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "hospitalerp",
+        "image_link": "projects/hospitalerp/voucher.jpg",
+        "title": "Voucher",
+        "image_src": "projects/hospitalerp/voucher.jpg",
+        "project_title": "Voucher",
+        "category": "Accounts",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "hospitalerp",
+        "image_link": "projects/hospitalerp/fundmanagement.jpg",
+        "title": "Fund Management",
+        "image_src": "projects/hospitalerp/fundmanagement.jpg",
+        "project_title": "Fund Management",
+        "category": "Accounts",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "hospitalerp",
+        "image_link": "projects/hospitalerp/incomeexpensereport.jpg",
+        "title": "Income Expense Report",
+        "image_src": "projects/hospitalerp/incomeexpensereport.jpg",
+        "project_title": "Income Expense Report",
+        "category": "Reports",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "hospitalerp",
+        "image_link": "projects/hospitalerp/cashcollectionreport.jpg",
+        "title": "Cash Collection Report",
+        "image_src": "projects/hospitalerp/cashcollectionreport.jpg",
+        "project_title": "Cash Collection Report",
+        "category": "Reports",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "hospitalerp",
+        "image_link": "projects/hospitalerp/smsmanagement.jpg",
+        "title": "SMS Management",
+        "image_src": "projects/hospitalerp/smsmanagement.jpg",
+        "project_title": "SMS Management",
+        "category": "CRM",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "hospitalerp",
+        "image_link": "projects/hospitalerp/acl.jpg",
+        "title": "Access Control Management",
+        "image_src": "projects/hospitalerp/acl.jpg",
+        "project_title": "Access Control Management",
+        "category": "Access Control Management",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "retail",
+        "image_link": "projects/retail/voucher.jpg",
+        "title": "Debit Voucher",
+        "image_src": "projects/retail/voucher.jpg",
+        "project_title": "Debit Voucher",
+        "category": "General Account",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "retail",
+        "image_link": "projects/retail/quotation.jpg",
+        "title": "Quotation",
+        "image_src": "projects/retail/quotation.jpg",
+        "project_title": "Sale via Quotation",
+        "category": "Inventory",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "retail",
+        "image_link": "projects/retail/purchase.jpg",
+        "title": "Purchase List",
+        "image_src": "projects/retail/purchase.jpg",
+        "project_title": "Purchase List",
+        "category": "Inventory",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "retail",
+        "image_link": "projects/retail/sales.jpg",
+        "title": "Sale Products",
+        "image_src": "projects/retail/sales.jpg",
+        "project_title": "Sale Products",
+        "category": "Inventory",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "retail",
+        "image_link": "projects/retail/generatebarcode.jpg",
+        "title": "Generate Barcode",
+        "image_src": "projects/retail/generatebarcode.jpg",
+        "project_title": "Generate Barcode",
+        "category": "Inventory",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    },
+    {
+        "class": "retail",
+        "image_link": "projects/retail/barcodeprint.jpg",
+        "title": "Print Barcode",
+        "image_src": "projects/retail/barcodeprint.jpg",
+        "project_title": "Generate Barcode",
+        "category": "Inventory",
+        "visit_site": "",
+        "copyright": "© 2019 Anik Datta",
+        "description": ""
+    }
+],
+  "papers": [
+    {
+      "title": "Reducing Computational Complexity in CNNs: A Focus on VGG19 Pruning and Quantization",
+      "year": "2025",
+      "subtitle": "Published in International Journal of Advanced Computer Science and Applications(ijacsa), Volume 16 Issue 6, 2025",
+      "description": "CNNs like VGG19 excel in computer vision but demand significant computational resources, hindering low-end device use. This study explores enhancing VGG19 efficiency via model compression: pruning (structured and unstructured) and quantization (8-bit and 4-bit QAT). Tested on MNIST, CIFAR-10, and Oxford-IIIT Pet, methods reduced model size by up to 75% with lowered computational costs. 8-bit QAT notably compressed systems without sacrificing speed or accuracy. However, 4-bit QAT, despite 48% compression, reduced accuracy on complex datasets. Structured pruning sped up inference, and unstructured pruning improved accuracy, simplifying VGG19 for edge device implementation while maintaining prediction quality.",
+      "pdf_link": "papers/1.pdf",
+      "authors": [
+        {
+          "name": "Md. Mijanur Rahman",
+          "website": "#"
+        },
+        {
+          "name": "Anik Datta",
+          "website": "http://auniik.github.io",
+          "linkedin": "https://www.linkedin.com/in/auniik",
+          "github": "https://github.com/auniik/"
+        },
+        {
+          "name": "Md. Sabiruzzaman",
+          "website": "#"
+        },
+        {
+          "name": "Md Samim Ahmed Bin Hossain",
+          "website": "#"
+        }
+      ]
+    },
+    {
+      "title": "Multi-Magnification Attention Fusion for Resource-Efficient Breast Cancer Classification with Integrated Grad-CAM Visualization",
+      "year": "2025",
+      "subtitle": "Unpublished paper",
+      "description": "This study develops a lightweight multi-magnification framework for clinical breast cancer classification, using depthwise separable convolutions and cross-magnification attention. Evaluated on BreakHis, it achieved 93.78% accuracy with 98% fewer parameters than traditional methods and 8.35ms inference time. The framework integrates interpretable Grad-CAM visualizations, enabling effective real-time screening in resource-constrained environments.",
+      "pdf_link": "papers/2.pdf",
+      "authors": [
+        {
+          "name": "Md. Mijanur Rahman",
+          "website": "#"
+        },
+        {
+          "name": "Anik Datta",
+          "website": "http://auniik.github.io",
+          "linkedin": "https://www.linkedin.com/in/auniik",
+          "github": "https://github.com/auniik/"
+        },
+        {
+          "name": "Md. Sabiruzzaman",
+          "website": "#"
+        },
+        {
+          "name": "Md Samim Ahmed Bin Hossain",
+          "website": "#"
+        }
+      ]
+    }
+  ],
+  "contact": {
+      "address": "Mirpur, Dhaka, Bangladesh",
+      "email": "auniikq@gmail.com",
+      "phone": "+880182-7764539",
+      "website": "https://auniik.github.io"
+  }
+}

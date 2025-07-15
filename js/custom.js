@@ -1,4 +1,4 @@
-jQuery(document).ready(function(){ 
+jQuery(document).ready(function() { 
 	
 	/* ---------------------------------------------------------------------- */
 	/*	Custom Functions
@@ -108,10 +108,11 @@ jQuery(document).ready(function(){
             }
         }           
     });
+	
 	/* ---------------------------------------------------------------------- */
 	/*	Cats Filter
 	/* ---------------------------------------------------------------------- */ 
-	
+
 	var $catsfilter 		= $('.cats-filter');
 
 	// Copy categories to item classes
@@ -120,7 +121,7 @@ jQuery(document).ready(function(){
 		$(this).parent().parent().find('a').removeClass('current');
 		$(this).addClass('current');
 	});	
-
+	
 	/* ---------------------------------------------------------------------- */
 	/*	Portfolio
 	/* ---------------------------------------------------------------------- */ 
@@ -134,23 +135,23 @@ jQuery(document).ready(function(){
 		filter				: '*',
 		layoutMode   		: 'masonry',
 		animationOptions	: {
-		duration			: 750,
-		easing				: 'linear'
-	   }
+			duration			: 750,
+			easing				: 'linear'
+		}
 	});	
 	
 	// Isotope Filter 
 	$pfilter.find('a').click(function(){
-	  var selector = $(this).attr('data-filter');
+		var selector = $(this).attr('data-filter');
 		$plist.isotope({ 
-		filter				: selector,
-		animationOptions	: {
-		duration			: 750,
-		easing				: 'linear',
-		queue				: false,
-	   }
-	  });
-	  return false;
+			filter				: selector,
+			animationOptions	: {
+				duration			: 750,
+				easing				: 'linear',
+				queue				: false,
+			}
+		});
+		return false;
 	});	
 	
 	// Portfolio image animation 
@@ -165,12 +166,14 @@ jQuery(document).ready(function(){
 	/*	prettyPhoto
 	/* ---------------------------------------------------------------------- */
 
-    $("a[rel^='projects']").prettyPhoto({
-    	animation_speed: 'fast', /* fast/slow/normal */
-    	social_tools: '',
-    	theme: 'pp_default',
-    	horizontal_padding: 5,
-    });
+	$("a[rel^='projects']").prettyPhoto({
+		animation_speed: 'fast', /* fast/slow/normal */
+		social_tools: '',
+		theme: 'pp_default',
+		horizontal_padding: 5,
+	});
+
+
 
 	/* ---------------------------------------------------------------------- */
 	/*	Contact Form
