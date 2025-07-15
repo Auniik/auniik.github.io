@@ -1,0 +1,364 @@
+{
+  "site": {
+      "title": "Anik Datta",
+      "header": {
+          "name": "ANIK DATTA",
+          "title": "Software Engineer | AI Enthusiast",
+          "social_text": "ALSO ON"
+      },
+      "footer": {
+          "copyright": "Anik Datta"
+      }
+  },
+  "profile": {
+      "name": "Anik Datta",
+      "title": "Software Engineer",
+      "about": "Experienced internet enthusiast with 5+ years in high-performance backend systems, ML integration, GenAI features, microservices, Agile workflows, DevOps, and software optimization.",
+      "location": "Living and working in Dhaka.",
+      "photo": "images/photo.jpg",
+      "info": {
+          "Name": "Anik Datta",
+          "Alma mater": "Southeast University, Dhaka",
+          "Address": "Mirpur, Dhaka",
+          "Email": "auniikq@gmail.com",
+          "GitHub": "https://github.com/auniik/",
+          "LinkedIn": "https://www.linkedin.com/in/auniik"
+      },
+      "socials": {
+          "GitHub": "https://github.com/auniik",
+          "LinkedIn": "https://www.linkedin.com/in/auniik",
+          "Twitter": "https://www.twitter.com/auniikq",
+          "Facebook": "https://www.facebook.com/auniik"
+      }
+  },
+  "employment": [
+        {
+            "position": "Software Engineer",
+            "duration": "2021 - Running",
+            "company": "Portonics Limited",
+            "url": "https://portonics.com",
+            "description": [
+                "Led GenAI-powered persona-based recommendation service for telco app; delivered 60+ TPS, scaled to 33M+ events/month and 411K+ peak requests/hour via persona segmentation.",
+                "Designed and developed a multimodal vector search API using Vertex AI and a vector database, handling 50+ TPS across text and image inputs.",
+                "Integrated APIs for a FinTech platform with Airtime recharge, Merchant payments, Card management, and Subscription services.",
+                "Optimized microservices using PHP, Node.js, and RabbitMQ, enabling real-time processing for 10M+ daily users.",
+                "Refactored legacy code, implemented CI/CD pipeline, reducing bugs by ~50% and increasing deployment speed.",
+                "Authored API documentation and operational runbooks for internal/external handoffs."
+            ]
+        },
+      {
+          "position": "Full-stack Developer",
+          "duration": "2020 - 2021",
+          "company": "Gain Solutions Ltd.",
+          "url": "https://gain.solutions",
+          "description": [
+                "Engineered a backend email tracking system using Laravel and MySQL, processing 50K+ emails/day. Authored API documentation and integrated alerting systems to ensure reliability.",
+                "Integrated third-party APIs (Mailgun, SES) for high deliverability, achieving a 95%+ success rate.",
+                "Created dynamic list segmentation feature, increasing campaign personalization and CTR by 30%."
+          ]
+      },
+      {
+          "position": "Software Engineer",
+          "duration": "2018 - 2020",
+          "company": "Smart Software Ltd.",
+          "url": "https://www.smartsoftware.com.bd/",
+          "description": [
+            "Built a modular Hospital Management System including Booking, Medical investigations, Pharmacy POS, Accounting, and Reporting.",
+            "Collaborated with medical professionals to build a hospital system adopted by 3+ clinics, resulting in a 40% reduction in administrative workload and 99.8% system uptime."
+          ]
+      },
+      {
+          "position": "Sales Executive",
+          "duration": "2017",
+          "company": "Gemcon Food and Agriculture Products Ltd, Dhaka",
+          "description": [
+            "Gathered knowledge about retail shop strategies, experienced a lot of things about their office management systems, terms, business logics."
+          ]
+      }
+  ],
+  "education": [
+        {
+          "institute": "Southeast University, Dhaka",
+          "duration": "2021 - 2025",
+          "degree": "Bachelor of Science in Computer Science and Engineering",
+          "note": "Graduated in Computer Science and Engineering in May 2025. Minors in Software, Technology"
+      },
+      {
+          "institute": "Dhaka Polytechnic Instute.",
+          "duration": "2014 - 2019",
+          "degree": "Diploma in Engineering with Computer Technology",
+          "note": "Completed in May 2019. Minors in Software, Technology"
+      },
+      {
+          "institute": "Brahmondi K. K. M. Government High School",
+          "duration": "2004 - 2014",
+          "degree": "Secondery in Science",
+          "note": "Areas of concetration: English, Science, Mathematics and Literature."
+      }
+  ],
+  "skills": [
+      
+  ],
+  "projects": [
+    {
+        "class": "genai",
+        "title": "TrueApp | Persona-Based Recommendation System",
+        "category": "Machine Learning & AI",
+        "year": "2025",
+        "company": "Portonics Limited",
+        "impact": "60+ TPS • 33M+ events/month • 411K+ peak requests/hour",
+        "hook": "Led GenAI-powered recommendation service for telco app",
+        "tech_stack": [
+            "Python",
+            "Vertex AI",
+            "Vector Databases",
+            "GenAI",
+            "Google Cloud Platform",
+            "Embedding",
+            "Nextjs",
+            "Microservices",
+            "Postgresql",
+            "Redis"
+        ],
+        "type": "AI/ML Integration",
+        "responsibility": "Led the end-to-end development of a GenAI-powered, persona-driven recommendation system for a major telecom app, leveraging dynamic persona segmentation to deliver personalized user experiences at scale—handling over 60+ TPS, 33M+ events per month, and 411K+ peak requests per hour. Integrated a scheduled training pipeline for content generation, and automated audits. Additionally, built an offer-matching engine and a robust CMS to manage prompts, manual triggers, GenAI models, and persona centroids, enabling seamless orchestration of campaigns and content personalization workflows."
+    },
+    {
+        "class": "genai",
+        "title": "TrueApp | Multimodal Vector Search System",
+        "category": "Machine Learning & AI",
+        "year": "2024",
+        "company": "Portonics Limited",
+        "impact": "50+ TPS • Text & Image Search • High-Accuracy Matching",
+        "hook": "Cutting-edge multimodal vector search using Vertex AI, Enabled semantic search across diverse content types with advanced embedding techniques",
+        "tech_stack": [
+            "Vertex AI",
+            "Vector Database",
+            "Python",
+            "GenAi Integration",
+            "REST API",
+            "Google Cloud Platform",
+            "Embeddings",
+            "Postgresql",
+            "Redis"
+        ],
+        "type": "AI/ML Integration",
+        "responsibility": "Developed a multimodal vector search system, enabling dense / sparse based search across diverse content types such as text, images, and metadata using advanced embedding techniques. Designed and implemented a robust data pipeline to collect and preprocess data from various sources, with daily scheduled syncs to ensure freshness and consistency. The system supported real-time indexing and retrieval, enhancing content discoverability and user engagement across the platform."
+    },
+    {
+        "class": "backend",
+        "title": "Bdtickets | Payment Microservice",
+        "category": "Backend Systems",
+        "year": "2023",
+        "company": "Portonics Limited",
+        "impact": "Multi channel payment processing • 99.9% uptime",
+        "hook": "Integrated comprehensive APIs for Ticketing service platform",
+        "tech_stack": [
+            "Golang",
+            "Node.js",
+            "Nestjs",
+            "Microservices",
+            "API"
+        ],
+        "type": "Backend",
+        "responsibility": "Led the development of a high-performance payment microservice for a ticketing service platform, ensuring seamless integration with multiple payment gateways and channels. Implemented robust error handling, logging, and monitoring to maintain high availability and reliability. The service supported real-time transaction processing, enabling users to purchase tickets efficiently while maintaining compliance with industry standards."
+    },
+    {
+        "class": "backend",
+        "title": "PortPos App | FinTech Platform",
+        "category": "Backend Systems",
+        "year": "2023",
+        "company": "Portonics Limited",
+        "impact": "Millions of transactions daily • 99.9% uptime",
+        "hook": "Integrated comprehensive APIs for FinTech platform",
+        "tech_stack": [
+            "PHP",
+            "Symfony",
+            "Golang",
+            "Node.js",
+            "Typescript",
+            "Microservices",
+            "MySQL",
+            "API",
+            "RabbitMQ"
+        ],
+        "type": "Backend",
+        "responsibility": "Led the development of the PortPos app for a FinTech platform, ensuring high performance and reliability through robust API integrations. Worked on core features such as saved card management, secure payment processing, airtime recharge, and third-party service integration. Additionally, implemented key improvements aligned with PCI-DSS certification requirements, enhancing security across card handling, data storage, and transaction workflows to meet industry compliance standards."
+    },
+    {
+        "class": "devops",
+        "title": "Atom Store App | Pack Purchase History System",
+        "category": "Backend Systems",
+        "year": "2022",
+        "company": "Portonics Limited",
+        "impact": "30 days history • Faster Response",
+        "hook": "Developed pack purchase history API for telecom app",
+        "tech_stack": [
+            "Typescript",
+            "MongoDB",
+            "Kibana",
+            "Elasticsearch"
+        ],
+        "type": "Backend",
+        "responsibility": "Developed a robust pack purchase history API for a high-traffic telecom app, enabling users to view their purchase history for the last 30 days. Implemented comprehensive logging and monitoring using Kibana and Elasticsearch, ensuring high availability and performance under heavy load. Contributed to the backend APIs for Gamification features, enhancing user engagement and retention through personalized experiences."
+    },
+    {
+        "class": "devops",
+        "title": "Atom Store App | Code Refactoring and CI/CD Pipeline",
+        "category": "Backend Systems",
+        "year": "2021",
+        "company": "Portonics Limited",
+        "impact": "50% bug reduction • Faster deployments",
+        "hook": "Refactored legacy code and implemented comprehensive CI/CD pipeline",
+        "tech_stack": [
+            "Jenkins",
+            "Docker",
+            "Git",
+            "Kibana",
+            "Elasticsearch"
+        ],
+        "type": "Backend",
+        "responsibility": "Refactored legacy codebase and implemented a comprehensive CI/CD pipeline, leading to a 50% reduction in bugs and significantly faster, more reliable deployments. Additionally contributed to the backend APIs for Gamification features and enhanced the core middleware of a high-traffic telecom app, improving scalability, maintainability, and overall performance under heavy load."
+    },
+    {
+        "class": "fullstack",
+        "title": "Sendex - Enterprise Email Marketing System",
+        "category": "Full-Stack Development",
+        "year": "2020",
+        "company": "Gain Solutions Ltd",
+        "impact": "50K+ emails daily • 95%+ delivery rate • 30% CTR increase",
+        "hook": "Multi-tenant SAAS based email marketing application with comprehensive campaign management features.",
+        "tech_stack": [
+            "Laravel",
+            "Vuejs",
+            "MySQL",
+            "Mailgun",
+            "Amazon SES",
+            "SMTP",
+            "SendGrid"
+        ],
+        "type": "Full-stack Development",
+        "responsibility": "Led development of subscriber management, campaign creation, custom form builder, segments, imported and dynamic lists, template builder, and reporting systems."
+    },
+    {
+        "class": "fullstack",
+        "title": "Hospital Management System",
+        "category": "Full-Stack Development",
+        "company": "Smart Software Ltd.",
+        "year": "2019",
+        "impact": "3+ clinics adopted • 40% reduction in administrative workload • 99.8% system uptime",
+        "visit_site": "https://www.smartsoftware.com.bd/hospital-management",
+        "hook": "Built comprehensive Hospital Management System with Booking, Medical investigations, Pharmacy POS, Accounting, and Reporting modules. Adopted by 3+ clinics, achieving 40% reduction in administrative workload and 99.8% system uptime through collaborative development with medical professionals.",
+        "tech_stack": [
+            "Laravel",
+            "MySQL",
+            "JavaScript",
+            "Bootstrap",
+            "AJAX",
+            "JQuery"
+        ],
+        "type": "Full-stack Development",
+        "responsibility": "Developed booking system, medical investigations management, pharmacy POS, accounting integration, and comprehensive reporting for clinics."
+    },
+    {
+        "class": "fullstack",
+        "title": "Retail Management System",
+        "category": "Full-Stack Development",
+        "company": "Smart Software Ltd.",
+        "year": "2020",
+        "impact": "5+ retail stores adopted • 30% increase in sales efficiency • 99.9% system uptime",
+        "hook": "Developed comprehensive Retail Management System with POS, Inventory Management, Accounting, and Reporting modules. Adopted by 5+ retail stores, achieving 30% increase in sales efficiency and 99.9% system uptime through collaborative development with retail professionals.",
+        "responsibility": "Built inventory management system including purchase management, quotation system, sales processing, product return handling, accounting integration, and comprehensive reporting.",
+        "tech_stack": [
+            "Laravel",
+            "MySQL",
+            "JavaScript",
+            "Bootstrap",
+            "AJAX",
+            "JQuery"
+        ],
+        "link": "https://www.smartsoftware.com.bd/best-pos-software-in-bangladesh",
+        "type": "Full-stack Development"
+    },
+    {
+        "class": "fullstack",
+        "title": "Tekasaibd | Online exam system",
+        "category": "Full-Stack Development",
+        "year": "2020",
+        "company": "Freelance Project",
+        "impact": "1K+ users • 99.9% system uptime",
+        "description": "Innovative online examination platform designed for long-duration exams with features familiar to Bangladeshi educational curriculum.",
+        "responsibility": "Developed online exam system, social engagement features, participant management, news feed, publications, creativity submission, and comprehensive admin panel with reporting.",
+        "tech_stack": [
+            "PHP",
+            "MySQL",
+            "JavaScript",
+            "Bootstrap",
+            "AJAX"
+        ],
+        "type": "Full-stack Development"
+    }
+],
+  "papers": [
+    {
+      "title": "Reducing Computational Complexity in CNNs: A Focus on VGG19 Pruning and Quantization",
+      "year": "2025",
+      "subtitle": "Published in International Journal of Advanced Computer Science and Applications(ijacsa), Volume 16 Issue 6, 2025",
+      "description": "CNNs like VGG19 excel in computer vision but demand significant computational resources, hindering low-end device use. This study explores enhancing VGG19 efficiency via model compression: pruning (structured and unstructured) and quantization (8-bit and 4-bit QAT). Tested on MNIST, CIFAR-10, and Oxford-IIIT Pet, methods reduced model size by up to 75% with lowered computational costs. 8-bit QAT notably compressed systems without sacrificing speed or accuracy. However, 4-bit QAT, despite 48% compression, reduced accuracy on complex datasets. Structured pruning sped up inference, and unstructured pruning improved accuracy, simplifying VGG19 for edge device implementation while maintaining prediction quality.",
+      "pdf_link": "papers/1.pdf",
+      "authors": [
+        {
+          "name": "Md. Mijanur Rahman",
+          "website": "#"
+        },
+        {
+          "name": "Anik Datta",
+          "website": "http://auniik.github.io",
+          "linkedin": "https://www.linkedin.com/in/auniik",
+          "github": "https://github.com/auniik/"
+        },
+        {
+          "name": "Md. Sabiruzzaman",
+          "website": "#"
+        },
+        {
+          "name": "Md Samim Ahmed Bin Hossain",
+          "website": "#"
+        }
+      ]
+    },
+    {
+      "title": "Multi-Magnification Attention Fusion for Resource-Efficient Breast Cancer Classification with Integrated Grad-CAM Visualization",
+      "year": "2025",
+      "subtitle": "Unpublished paper",
+      "description": "This study develops a lightweight multi-magnification framework for clinical breast cancer classification, using depthwise separable convolutions and cross-magnification attention. Evaluated on BreakHis, it achieved 93.78% accuracy with 98% fewer parameters than traditional methods and 8.35ms inference time. The framework integrates interpretable Grad-CAM visualizations, enabling effective real-time screening in resource-constrained environments.",
+      "pdf_link": "papers/2.pdf",
+      "authors": [
+        {
+          "name": "Md. Mijanur Rahman",
+          "website": "#"
+        },
+        {
+          "name": "Anik Datta",
+          "website": "http://auniik.github.io",
+          "linkedin": "https://www.linkedin.com/in/auniik",
+          "github": "https://github.com/auniik/"
+        },
+        {
+          "name": "Md. Sabiruzzaman",
+          "website": "#"
+        },
+        {
+          "name": "Md Samim Ahmed Bin Hossain",
+          "website": "#"
+        }
+      ]
+    }
+  ],
+  "contact": {
+      "address": "Mirpur, Dhaka, Bangladesh",
+      "email": "auniikq@gmail.com",
+      "phone": "+880182-7764539",
+      "website": "https://auniik.github.io"
+  }
+}
