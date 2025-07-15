@@ -103,21 +103,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const projectList = projects
       .map(
         (proj) => `
-        <li class="${proj.class}">
-            <a href="${proj.image_link}" rel="projects" title="${proj.title}" class="folio">
-              <img src="${proj.image_src}" />
-              <h2 class="title">${proj.title}</h2>
-              <span class="categorie">${proj.category}</span>
-            </a>
-            <div class="description">
-              <p>${proj.visit_site ? `Visit Site: <a href='${proj.visit_site}' target='_blank'>${proj.visit_site}</a>` : ""}</p>
-              <h5>${proj.copyright}</h5>
+        <li>
+            <div class="timelineUnit">
+                <h4>${proj.title}<span class="timelineDate">${proj.duration || proj.category}</span></h4>
+                <h5>${proj.company || ""}</h5>
+                <p><strong>Description:</strong> ${proj.description}</p>
+                ${proj.responsibility ? `<p><strong>Responsibility:</strong> ${proj.responsibility}</p>` : ""}
+                ${proj.technology ? `<p><strong>Technology:</strong> ${proj.technology}</p>` : ""}
+                ${proj.link ? `<p><strong>Link:</strong> <a href='${proj.link}' target='_blank'>${proj.link}</a></p>` : ""}
+                ${proj.visit_site ? `<p><strong>Visit Site:</strong> <a href='${proj.visit_site}' target='_blank'>${proj.visit_site}</a></p>` : ""}
             </div>
         </li>`
       )
       .join("");
 
-    document.querySelector("#projects-list").innerHTML = projectList;
+    document.querySelector("#projects-timeline").innerHTML = projectList;
   }
   
   function loadPapers(papers) {
