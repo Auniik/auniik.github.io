@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
         loadProfile(data.profile);
         loadResume(data);
         loadProjects(data.projects);
-        loadPapers(data.papers);
-        loadContact(data.contact);
+        loadPapers(data.papers, data.profile.name);
+        loadContact(data);
       });
   });
   
@@ -29,20 +29,20 @@ document.addEventListener("DOMContentLoaded", function () {
   function loadProfile(profile) {
     document.querySelector(".about h1").textContent = profile.name;
     document.querySelector(".about h3").textContent = profile.title;
-    document.querySelector(".about p:nth-of-type(1)").textContent = profile.about;
-    document.querySelector(".about p:nth-of-type(2)").textContent = profile.location;
-    
-    // Update personal info
-    const personalInfo = document.querySelector(".personal-info");
-    personalInfo.innerHTML = "";
-
-    Object.entries(profile.info).forEach(([label, value]) => {
-      if (label === "GitHub" || label === "LinkedIn") {
-        personalInfo.innerHTML += `<li><label>${label}</label><span class="word-wrap"><a href="${value}" target="_blank">${value}</a></span></li>`;
-      } else {
-        personalInfo.innerHTML += `<li><label>${label}</label><span>${value}</span></li>`;
-      }
-    });
+    // Whole years since career_start ("2018-11"), so "{years}+" in the summary never goes stale
+    const [startYear, startMonth] = profile.career_start.split("-").map(Number);
+    const now = new Date();
+    const years = now.getFullYear() - startYear - (now.getMonth() + 1 < startMonth ? 1 : 0);
+    document.querySelector(".about p:nth-of-type(1)").textContent = profile.about.replace("{years}", years);
+    document.querySelector(".personal-info").innerHTML = profile.info
+      .map(
+        (item) => `<li><label>${item.label}</label><span>${
+          item.url
+            ? `<a href="${item.url}"${item.url.startsWith("http") ? ' target="_blank"' : ""}>${item.value}</a>`
+            : item.value
+        }</span></li>`
+      )
+      .join("");
     
     // Update social icons in header
     const socialIcons = document.querySelectorAll(".socialicons li a");
@@ -52,18 +52,53 @@ document.addEventListener("DOMContentLoaded", function () {
     socialIcons[3].href = profile.socials.Facebook;
   }
   
+  // Emphasise metrics like "60+ TPS", "33M+ events/month", "~50%" so they stand out when skimming
+  const metric =
+    /[~$]?\d[\d.,]*(?:ms\b)?[KMB]?(?:\+%?|%\+?)?(?::\d+)?(?:\s(?:TPS|kbps|KB\/s|MB|hours|days|weeks|events\/month|peak requests\/hour|daily users|emails\/day|clinics|merged PRs|test files))?/g;
+  // Only figures with a +, %, ~, $, ratio or unit count as metrics; plain numbers like "BLE 5.4" stay as they are
+  const highlight = (text) =>
+    text.replace(metric, (m) => (/[+%~$:]|\s|ms$/.test(m) ? `<strong>${m}</strong>` : m));
+
   function loadResume(resume) {
-    const employment = resume.employment
-      .map(
-        (job) => `
-        <li>
+    const describe = (job) =>
+      job.description.length
+        ? `<ul class="duties">${job.description.map((d) => `<li>${highlight(d)}</li>`).join("")}</ul>`
+        : "";
+
+    // Group consecutive roles at the same company, LinkedIn style
+    const groups = [];
+    resume.employment.forEach((job) => {
+      const last = groups[groups.length - 1];
+      if (last && last[0].company === job.company) last.push(job);
+      else groups.push([job]);
+    });
+
+    const employment = groups
+      .map((jobs) => {
+        const single = jobs.length === 1;
+        const start = jobs[jobs.length - 1].duration.split(" - ")[0];
+        const end = jobs[0].duration.split(" - ").pop();
+        const duration = single ? jobs[0].duration : `${start} - ${end}`;
+        const roles = jobs
+          .map(
+            (job) => `
+                <li class="role${job.duration.includes("Running") ? " current" : ""}">
+                    <h4>${job.position}<span class="timelineDate">${job.duration}</span></h4>
+                    ${describe(job)}
+                </li>`
+          )
+          .join("");
+
+        return `
+        <li class="company-group">
             <div class="timelineUnit">
-                <h4>${job.position}<span class="timelineDate">${job.duration}</span></h4>
-                <h5><a target="_blank" href="${job.url}">${job.company}</a> </h5>
-                <p>- ${job.description.join("<br> - ")}</p>
+                <h4><a target="_blank" href="${jobs[0].url}">${jobs[0].company}</a><span class="timelineDate">${duration}</span></h4>
+                ${single ? "" : `<h5>${jobs.length} roles</h5>`}
+                <ul class="roles">${roles}
+                </ul>
             </div>
-        </li>`
-      )
+        </li>`;
+      })
       .join("");
 
       let clear = `<div class="clear"></div>`;
@@ -86,90 +121,210 @@ document.addEventListener("DOMContentLoaded", function () {
   
     document.querySelectorAll("#resume .timeline-section ul.timeline")[1].innerHTML = education + clear;
   
-    // const skills = resume.skills
-    //   .map(
-    //     (skill) => `
-    //   <li>
-    //     <h4>${skill.name}</h4>
-    //     <div class="rating" data-rat="${skill.level}"></div>
-    //   </li>`
-    //   )
-    //   .join("");
-  
-    // document.querySelector("#resume .skills-section ul.skills").innerHTML = skills;
-  }
-  
-  function loadProjects(projects) {
-    const projectList = projects
-      .map(
-        (proj) => {
-          // Generate simple tech badges (limit to 3-4 key technologies)
-          const techBadges = proj.tech_stack ? proj.tech_stack.map(tech => 
-            `<span class="tech-badge">${tech}</span>`
-          ).join('') : '';
+    // shields.io badge; "-" and "_" are separators in its path, so they are doubled to escape them
+    const badge = (item) => {
+      const label = encodeURIComponent(item.name).replace(/-/g, "--").replace(/_/g, "__");
+      const logo = item.logo ? `&logo=${item.logo}&logoColor=white` : "";
+      return `<img src="https://img.shields.io/badge/${label}-${item.color}?style=for-the-badge${logo}" alt="${item.name}" />`;
+    };
 
-          return `
-            <div class="project-card">
-              <div class="project-header">
-                <h3 class="project-title">${proj.title}</h3>
-                ${proj.type ? `<span class="project-type">${proj.type}</span>` : ''}
-              </div>
-              
-              ${proj.company ? `<div class="project-company">${proj.company} • ${proj.year || proj.category}</div>` : ''}
-              
-              ${proj.impact ? `<div class="project-impact">${proj.impact}</div>` : ''}
-              
-              ${proj.hook ? `<div class="project-hook">${proj.hook}</div>` : ''}
-              
-              ${proj.responsibility ? `<div class="project-responsibility"><strong>Responsibility:</strong> ${proj.responsibility}</div>` : ''}
-              
-              ${techBadges ? `<div class="tech-stack">${techBadges}</div>` : ''}
-            </div>
-          `;
-        }
+    const skills = resume.skills
+      .map(
+        (skill) => `
+      <div class="skill-group">
+        <h4>${skill.group}</h4>
+        <ul>${skill.items.map((item) => `<li>${badge(item)}</li>`).join("")}</ul>
+      </div>`
       )
       .join("");
 
-    document.querySelector("#projects-timeline").innerHTML = projectList;
+    document.querySelector("#resume .skills-section .skill-groups").innerHTML = skills;
   }
   
-  function loadPapers(papers) {
-    const papersList = papers
-  .map((paper) => `
-    <li style="margin-bottom: 290px;">                   
-      <div class="timelineUnit left">
-        <h4>${paper.title}<span class="timelineDate">${paper.year}</span></h4>
-        <h5>${paper.subtitle}</h5>
-        <p>${paper.description}</p>
-      </div>
-      <div class="right">
-        <ul class="skills">
-          ${paper.authors.map(author => `
-            <li>
-              <h4>${author.name}</h4>
-              <div class="intouch">
-                <a href="${author.website}" target="_blank"><span data-icon="&#xe000;" aria-hidden="true"></span></a>
-                ${author.linkedin ? `<a href="${author.linkedin}" target="_blank"><span data-icon="&#xe02c;" aria-hidden="true"></span></a>` : ''}
-                ${author.github ? `<a href="${author.github}" target="_blank"><span data-icon="&#xe01f;" aria-hidden="true"></span></a>` : ''}
-              </div>
-            </li>
-          `).join('')}
-        </ul>
-        <div class="clear"></div>
-        <a href="${paper.pdf_link}" class="button transition" target="_blank">Download Paper in PDF Format</a>
-      </div>
-    </li>
-  `)
-  .join("");
-    document.querySelector("#papers .timeline").innerHTML = papersList;
+  function loadProjects(projects) {
+    const slug = (proj) => proj.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+    const menu = projects
+      .map(
+        (proj) => `
+            <li><a href="?project=${slug(proj)}#projects" data-project="${slug(proj)}">
+              <span class="project-menu-meta">${proj.year} · ${proj.type}</span>
+              <span class="project-menu-title">${proj.title}</span>
+            </a></li>`
+      )
+      .join("");
+
+    // Every project is rendered once; desktop shows the selected one, phones show them all stacked
+    const details = projects
+      .map(
+        (proj) => `
+            <article class="project-card" data-project="${slug(proj)}">
+              <div class="project-type">${proj.type}<span class="timelineDate">${proj.year}</span></div>
+              <h4 class="project-title">${proj.title}</h4>
+              <div class="project-company">${[proj.product, proj.company].filter(Boolean).join(" · ")}${
+                proj.url ? ` · <a href="${proj.url}" target="_blank">Visit site</a>` : ""
+              }</div>
+              <p class="project-hook">${proj.hook}</p>
+              <div class="project-impact">${proj.impact
+                .map((i) => `<div><strong>${i.value}</strong><span>${i.label}</span></div>`)
+                .join("")}</div>
+              <ul class="duties">${proj.highlights.map((h) => `<li>${highlight(h)}</li>`).join("")}</ul>
+              <div class="tech-stack">${proj.tech_stack.map((t) => `<span>${t}</span>`).join("")}</div>
+            </article>`
+      )
+      .join("");
+
+    const $menu = document.querySelector("#projects .project-menu");
+    const $detail = document.querySelector("#projects .project-detail");
+    $menu.innerHTML = menu;
+    $detail.innerHTML = details;
+
+    // Keep the selected project in the URL (?project=karmo) so reloads and shared links open it
+    const select = (key, updateUrl) => {
+      if (!$detail.querySelector(`[data-project="${key}"]`)) key = slug(projects[0]);
+      document.querySelectorAll("#projects [data-project]").forEach((el) => {
+        el.classList.toggle("active", el.dataset.project === key);
+      });
+      if (updateUrl) {
+        const url = new URL(location.href);
+        url.searchParams.set("project", key);
+        history.replaceState(history.state, "", url);
+        document.querySelector("#projects").scrollTop = 0;
+      }
+    };
+
+    $menu.addEventListener("click", (e) => {
+      const link = e.target.closest("a[data-project]");
+      if (!link) return;
+      e.preventDefault();
+      select(link.dataset.project, true);
+    });
+
+    select(new URLSearchParams(location.search).get("project"), false);
   }
   
-  function loadContact(contact) {
-    const contactInfo = document.querySelector(".contact-info ul");
-    contactInfo.innerHTML = `
-      <li>${contact.address}</li>
-      <li>Email: <a href="mailto:${contact.email}">${contact.email}</a></li>
-      <li>Phone: <a href="tel:${contact.phone}">${contact.phone}</a></li>
-      <li><a href="${contact.website}">${contact.website}</a></li>
-    `;
+  // "Md Samim Ahmed Bin Hossain" -> "Hossain, M. S. A. B." (APA style)
+  const apaName = (name) => {
+    const parts = name.replace(/\./g, "").split(/\s+/);
+    const last = parts.pop();
+    return `${last}, ${parts.map((p) => `${p[0]}.`).join(" ")}`;
+  };
+
+  const citations = (paper) => {
+    const names = paper.authors.map(apaName);
+    const authors = names.length > 1 ? `${names.slice(0, -1).join(", ")}, & ${names[names.length - 1]}` : names[0];
+    const source = paper.journal
+      ? `. <i>${paper.journal}</i>, <i>${paper.volume}</i>(${paper.issue}).`
+      : " [Preprint].";
+    // APA prefers the DOI link over any other URL
+    const link = paper.doi ? `https://doi.org/${paper.doi}` : paper.url;
+    const apa = `${authors} (${paper.year}). ${paper.title}${source}${link ? ` ${link}` : ""}`;
+
+    const key = `${paper.authors[0].split(" ").pop()}${paper.year}${paper.title.split(/\W+/)[0]}`.toLowerCase();
+    const fields = [
+      ["title", `{${paper.title}}`],
+      ["author", paper.authors.join(" and ")],
+      paper.journal && ["journal", paper.journal],
+      paper.volume && ["volume", paper.volume],
+      paper.issue && ["number", paper.issue],
+      ["year", paper.year],
+      paper.doi && ["doi", paper.doi],
+      paper.url && ["url", paper.url],
+      !paper.journal && ["note", "Preprint"],
+    ].filter(Boolean);
+    const bibtex = `@${paper.journal ? "article" : "misc"}{${key},\n${fields
+      .map(([k, v]) => `  ${k} = {${v}}`)
+      .join(",\n")}\n}`;
+
+    return { apa, bibtex };
+  };
+
+  function loadPapers(papers, me) {
+    const cites = papers.map(citations);
+    const $list = document.querySelector("#research .papers-list");
+
+    $list.innerHTML = papers
+      .map(
+        (paper, i) => `
+        <article class="project-card paper">
+          <div class="project-type">${[paper.type, paper.venue].filter(Boolean).join(" · ")}<span class="timelineDate">${paper.year}</span></div>
+          <h4 class="project-title">${paper.title}</h4>
+          <div class="project-company">${paper.authors
+            .map((name) => (name === me ? `<strong>${name}</strong>` : name))
+            .join(", ")}</div>
+          <h5 class="paper-abstract-label">Abstract</h5>
+          <p class="paper-abstract">${highlight(paper.description)}</p>
+          <div class="paper-links">
+            ${paper.url ? `<a class="paper-link external" href="${paper.url}" target="_blank">View on ${paper.venue.split(" · ")[0]}</a>` : ""}
+            <a class="paper-link" href="${paper.pdf_link}" target="_blank">PDF</a>
+            <button type="button" class="paper-link cite-toggle" data-paper="${i}">Cite</button>
+            ${paper.doi ? `<a class="paper-doi" href="https://doi.org/${paper.doi}" target="_blank">DOI: ${paper.doi}</a>` : ""}
+          </div>
+          <div class="paper-cite" data-paper="${i}" hidden>
+            <p>${cites[i].apa}</p>
+            <button type="button" class="cite-copy" data-paper="${i}" data-format="apa">Copy APA</button>
+            <button type="button" class="cite-copy" data-paper="${i}" data-format="bibtex">Copy BibTeX</button>
+          </div>
+        </article>`
+      )
+      .join("");
+
+    $list.addEventListener("click", (e) => {
+      const toggle = e.target.closest(".cite-toggle");
+      if (toggle) {
+        const panel = $list.querySelector(`.paper-cite[data-paper="${toggle.dataset.paper}"]`);
+        panel.hidden = !panel.hidden;
+        toggle.classList.toggle("active", !panel.hidden);
+        return;
+      }
+      const copy = e.target.closest(".cite-copy");
+      if (copy) {
+        const cite = cites[copy.dataset.paper];
+        // APA is copied as plain text, without the <i> tags used for display
+        const text = copy.dataset.format === "apa" ? cite.apa.replace(/<\/?i>/g, "") : cite.bibtex;
+        navigator.clipboard.writeText(text).then(() => {
+          const label = copy.textContent;
+          copy.textContent = "Copied";
+          setTimeout(() => (copy.textContent = label), 1500);
+        });
+      }
+    });
+  }
+  
+  function loadContact(data) {
+    const { contact, profile } = data;
+    const [city, country] = contact.address.split(",").slice(-2).map((part) => part.trim());
+    const [first, ...rest] = profile.name.split(" ");
+    const phone = contact.phone.replace(/[^+\d]/g, "");
+
+    // vCard 3.0, the version phone cameras and contact apps read most reliably
+    const vcard = (lines) => ["BEGIN:VCARD", "VERSION:3.0", ...lines, "END:VCARD"].join("\r\n");
+    const essentials = [
+      `N:${rest.join(" ")};${first};;;`,
+      `FN:${profile.name}`,
+      `TEL:${phone}`,
+      `EMAIL:${contact.email}`,
+      `URL:${contact.website}`,
+    ];
+
+    // The QR code carries only the essentials so it stays coarse enough for any phone camera;
+    // the downloadable file has the full card
+    if (window.qrcode) {
+      const qr = qrcode(0, "L");
+      qr.addData(vcard(essentials));
+      qr.make();
+      document.querySelector("#contact .vcard-qr").innerHTML = qr.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
+    }
+
+    const full = vcard([
+      ...essentials,
+      `TITLE:${profile.title}`,
+      `ORG:${data.employment[0].company}`,
+      `ADR;TYPE=WORK:;;;${city};;;${country}`,
+      `X-SOCIALPROFILE;TYPE=linkedin:${profile.socials.LinkedIn}`,
+    ]);
+    document.querySelector("#contact .vcard-download").href = URL.createObjectURL(new Blob([full], { type: "text/vcard" }));
+
+    // The form's error message offers this address as a fallback
+    document.querySelector("#contactform").dataset.email = contact.email;
   }

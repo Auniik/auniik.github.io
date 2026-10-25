@@ -280,6 +280,15 @@ header
 	padding-top: 4px;
 	width: 210px;
 }
+.personal-info li span a
+{
+	color: inherit;
+}
+.personal-info li span a:hover
+{
+	color: #6b5000;
+	text-decoration: underline;
+}
 .menu
 {
 	background-color: #ededed;
@@ -413,6 +422,100 @@ header
 	font-size: 12px;
 	margin-top: 5px;
 }
+.timeline li.company-group
+{
+	margin-bottom: 28px;
+}
+.timeline li.company-group .timelineUnit > h4
+{
+	font-weight: 600;
+}
+.timeline li.company-group .timelineUnit > h4 a
+{
+	color: #333;
+}
+.timeline li .timelineUnit .roles
+{
+	margin-top: 10px;
+}
+.timeline li .timelineUnit .roles li.role
+{
+	margin-bottom: 0;
+	padding: 0 0 14px 20px;
+	position: relative;
+}
+.timeline li .timelineUnit .roles li.role:last-child
+{
+	padding-bottom: 0;
+}
+.timeline li .timelineUnit .roles li.role:before
+{
+	background: #fff;
+	border: 2px solid #fdc750;
+	border-radius: 50%;
+	content: "";
+	height: 6px;
+	left: 0;
+	position: absolute;
+	top: 7px;
+	width: 6px;
+}
+.timeline li .timelineUnit .roles li.role.current:before
+{
+	background: #fdc750;
+}
+.timeline li .timelineUnit .roles li.role:after
+{
+	background: #e5e5e5;
+	bottom: -5px;
+	content: "";
+	left: 4px;
+	position: absolute;
+	top: 19px;
+	width: 2px;
+}
+.timeline li .timelineUnit .roles li.role:last-child:after
+{
+	display: none;
+}
+.timeline li .timelineUnit .roles li.role h4
+{
+	color: #555;
+	font-size: 14px;
+}
+.timeline li .timelineUnit .roles li.role .duties
+{
+	margin-top: 8px;
+}
+.timeline li .timelineUnit .roles li.role .duties li
+{
+	color: #666;
+	font-size: 12px;
+	line-height: 18px;
+	margin-bottom: 6px;
+	padding-left: 14px;
+	position: relative;
+}
+.timeline li .timelineUnit .roles li.role .duties strong
+{
+	color: #333;
+	font-weight: 600;
+}
+.timeline li .timelineUnit .roles li.role .duties li:last-child
+{
+	margin-bottom: 0;
+}
+.timeline li .timelineUnit .roles li.role .duties li:before
+{
+	background: #ccc;
+	border-radius: 50%;
+	content: "";
+	height: 4px;
+	left: 2px;
+	position: absolute;
+	top: 7px;
+	width: 4px;
+}
 .skills-section
 {
 	width: 270px;
@@ -421,6 +524,34 @@ header
 {
 	margin-bottom: 25px;
 	overflow: hidden;
+}
+.skill-groups
+{
+	margin-bottom: 30px;
+}
+.skill-group
+{
+	margin-bottom: 16px;
+}
+.skill-group h4
+{
+	color: #999;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	margin-bottom: 6px;
+	text-transform: uppercase;
+}
+.skill-group ul
+{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+}
+.skill-group li img
+{
+	display: block;
+	height: 22px;
 }
 .skills li
 {
@@ -484,99 +615,291 @@ header
 	padding: 40px 20px;
 }
 
-/* Minimal Project Cards */
-.project-card {
-	background: #fff;
-    border-left: 1px solid #fdc750;
-    padding: 20px;
-    margin-bottom: 20px;
-    transition: all 0.2s ease;
-}
-
-.project-card:hover {
-	border-left-color: #333;
-	transform: translateX(5px);
-}
-
-.project-header {
+/* Projects: menu on the left, the selected project on the right */
+.projects-browser
+{
+	align-items: flex-start;
 	display: flex;
-	justify-content: space-between;
-	align-items: baseline;
-	margin-bottom: 8px;
+	gap: 30px;
 }
-
-.project-title {
-	font-size: 16px;
-	font-weight: 600;
-	color: #333;
-	margin: 0;
+.project-menu
+{
+	border-right: 1px solid #eee;
+	flex: 0 0 220px;
+	position: sticky;
+	top: 0;
 }
-
-.project-type {
-	background: #f5f5f5;
-	color: #666;
-	padding: 2px 8px;
+.project-menu a
+{
+	border-left: 2px solid transparent;
+	display: block;
+	padding: 8px 12px;
+}
+.project-menu a:hover
+{
+	background: #fafafa;
+}
+.project-menu a.active
+{
+	background: #fffaf0;
+	border-left-color: #fdc750;
+}
+.project-menu-meta
+{
+	color: #aaa;
+	display: block;
 	font-size: 10px;
-	font-weight: 500;
+	font-weight: 600;
+	letter-spacing: 0.4px;
+	line-height: 14px;
 	text-transform: uppercase;
-	letter-spacing: 0.5px;
 }
-
-.project-company {
+.project-menu-title
+{
+	color: #666;
+	display: block;
+	font-size: 13px;
+	line-height: 18px;
+}
+.project-menu a.active .project-menu-title
+{
+	color: #333;
+	font-weight: 600;
+}
+.project-detail
+{
+	flex: 1;
+	min-width: 0;
+}
+.project-detail .project-card
+{
+	display: none;
+}
+.project-detail .project-card.active
+{
+	display: block;
+}
+.project-type
+{
 	color: #999;
-	font-size: 12px;
-	margin-bottom: 6px;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	line-height: 17px;
+	text-transform: uppercase;
 }
-
-.project-impact {
-	background: linear-gradient(135deg, #fff8e1 0%, #fffdf7 100%);
-    color: #e65100;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 8px 12px;
-    margin: 8px 0;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
+.project-type .timelineDate
+{
+	color: #fdc750;
+	float: right;
+	font-size: 14px;
+	font-weight: normal;
+	letter-spacing: 0;
+	text-transform: none;
 }
-
-.project-impact::before {
-	content: "📊";
-	margin-right: 6px;
+.project-title
+{
+	color: #333;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 28px;
+	margin-top: 2px;
 }
-
-.project-responsibility {
+.project-company
+{
+	color: #999;
+	font-size: 13px;
+	line-height: 18px;
+}
+.project-company a
+{
+	color: #c99400;
+}
+.project-company a:hover
+{
+	color: #333;
+}
+.project-hook
+{
 	color: #555;
-	font-size: 12px;
-	line-height: 1.5;
-	margin: 8px 0;
-	padding: 8px 0;
-	border-top: 1px solid #f0f0f0;
-	font-style: italic;
+	font-size: 14px;
+	line-height: 21px;
+	margin-top: 12px;
 }
-
-.project-hook {
+.project-impact
+{
+	display: grid;
+	gap: 10px;
+	grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+	margin-top: 16px;
+}
+.project-impact div
+{
+	background: #fff8e6;
+	border-radius: 3px;
+	padding: 12px 14px;
+}
+.project-impact strong
+{
+	color: #333;
+	display: block;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 26px;
+}
+.project-impact span
+{
+	color: #8a7340;
+	display: block;
+	font-size: 12px;
+	line-height: 16px;
+}
+.project-card .duties
+{
+	margin-top: 18px;
+}
+.project-card .duties li
+{
 	color: #666;
 	font-size: 13px;
-	line-height: 1.4;
-	margin-bottom: 10px;
+	line-height: 19px;
+	margin-bottom: 8px;
+	padding-left: 14px;
+	position: relative;
 }
-
-.tech-stack {
+.project-card .duties li:before
+{
+	background: #ccc;
+	border-radius: 50%;
+	content: "";
+	height: 4px;
+	left: 2px;
+	position: absolute;
+	top: 8px;
+	width: 4px;
+}
+.project-card .duties strong
+{
+	color: #333;
+	font-weight: 600;
+}
+/* Papers reuse the project card parts */
+.papers-list .project-card
+{
+	border-left: 1px solid #fdc750;
+	margin-bottom: 32px;
+	padding-left: 15px;
+}
+.papers-list .project-title
+{
+	font-size: 17px;
+	line-height: 24px;
+}
+.papers-list .project-company strong
+{
+	color: #555;
+	font-weight: 600;
+}
+.paper-abstract-label
+{
+	color: #999;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	margin-top: 18px;
+	text-transform: uppercase;
+}
+.paper-abstract
+{
+	color: #666;
+	font-size: 13px;
+	line-height: 20px;
+	margin-top: 6px;
+}
+.paper-links
+{
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 18px;
+	margin-top: 14px;
+}
+.paper-link
+{
+	background: none;
+	border: 0;
+	color: #c99400;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: 13px;
+	font-weight: 600;
+	padding: 0;
+}
+.paper-link.external:after
+{
+	content: " \2197";
+}
+.paper-link:hover,
+.paper-link.active
+{
+	color: #333;
+}
+.paper-doi
+{
+	color: #999;
+	font-size: 12px;
+	margin-left: auto;
+}
+.paper-doi:hover
+{
+	color: #c99400;
+}
+.paper-cite
+{
+	background: #fafafa;
+	border-left: 2px solid #fdc750;
+	margin-top: 10px;
+	padding: 12px 14px;
+}
+.paper-cite p
+{
+	color: #555;
+	font-size: 12px;
+	line-height: 18px;
+	margin-bottom: 10px;
+	overflow-wrap: anywhere;
+}
+.cite-copy
+{
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	color: #555;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: 12px;
+	margin-right: 6px;
+	padding: 4px 10px;
+}
+.cite-copy:hover
+{
+	border-color: #fdc750;
+	color: #333;
+}
+.tech-stack
+{
 	display: flex;
 	flex-wrap: wrap;
 	gap: 4px;
-	margin-top: 8px;
+	margin-top: 14px;
 }
-
-.tech-badge {
-	background: #f8f8f8;
-    color: #666;
-    padding: 2px 6px;
-    font-size: 12px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
+.tech-stack span
+{
+	background: #f4f4f4;
+	color: #666;
+	font-size: 11px;
+	line-height: 15px;
+	padding: 2px 7px;
 }
 #projects-list
 {
@@ -683,7 +1006,7 @@ header
 	z-index: 15;
 }
 
-#papers
+#research
 {
 	overflow: hidden;
 	padding: 40px 20px;
@@ -1079,8 +1402,148 @@ form p label
 {
 	color: #999;
 	display: block;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	margin-bottom: 6px;
+	text-transform: uppercase;
+}
+
+/* Contact: vCard QR card on the left, form on the right */
+#contact
+{
+	padding: 40px 0;
+}
+.vcard-qr
+{
+	background: #fff;
+	border: 1px solid #eee;
+	border-radius: 4px;
+	box-sizing: border-box;
+	padding: 12px;
+	width: 220px;
+}
+.vcard-qr svg
+{
+	display: block;
+	height: auto;
+	width: 100%;
+}
+.vcard-caption
+{
+	color: #999;
+	font-size: 12px;
+	line-height: 17px;
+	margin-top: 10px;
+	max-width: 210px;
+}
+.vcard-download
+{
+	color: #c99400;
+	display: inline-block;
 	font-size: 13px;
-	margin-bottom: 8px;
+	font-weight: 600;
+	margin-top: 8px;
+}
+.vcard-download:hover
+{
+	color: #333;
+}
+.form-row
+{
+	display: grid;
+	gap: 16px;
+	grid-template-columns: 1fr 1fr;
+}
+form .input,
+form textarea
+{
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	box-shadow: none;
+	box-sizing: border-box;
+	color: #333;
+	font-family: inherit;
+	font-size: 13px;
+	transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+form .input
+{
+	height: 38px;
+	padding: 8px 12px;
+}
+form textarea
+{
+	height: 140px;
+	padding: 10px 12px;
+}
+form .input:focus,
+form textarea:focus
+{
+	border-color: #fdc750;
+	box-shadow: 0 0 0 3px rgba(253, 199, 80, 0.25);
+}
+form .input.invalid,
+form textarea.invalid
+{
+	border-color: #e0675a;
+}
+.field-error
+{
+	color: #c0392b;
+	display: block;
+	font-size: 12px;
+	margin-top: 4px;
+}
+.field-error:empty
+{
+	display: none;
+}
+.honeypot
+{
+	left: -9999px;
+	position: absolute;
+}
+.form-actions
+{
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+}
+.form-submit
+{
+	background: #fdc750;
+	border: 0;
+	border-radius: 3px;
+	color: #3a2c00;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: 13px;
+	font-weight: 600;
+	padding: 10px 22px;
+}
+.form-submit:hover
+{
+	background: #f5b82e;
+}
+.form-submit:disabled
+{
+	cursor: default;
+	opacity: 0.6;
+}
+#my-form-status
+{
+	font-size: 13px;
+	line-height: 18px;
+}
+#my-form-status.success
+{
+	color: #2e7d32;
+}
+#my-form-status.error
+{
+	color: #c0392b;
 }
 .button
 {
@@ -1562,5 +2025,223 @@ div.footer .copyright
 	{
 		background: url('../images/tab-hover@2x.png') no-repeat;
 		background-size: 116px 114px;
+	}
+}
+
+/* ---------------------------------------------------------------------- */
+/*	Inset scroll: the whole card fits the viewport, panels scroll inside
+/* ---------------------------------------------------------------------- */
+@media only screen and (min-width: 768px) and (min-height: 600px)
+{
+	html
+	{
+		overflow-y: auto;
+	}
+	#container
+	{
+		margin-bottom: 0;
+		margin-top: 20px;
+	}
+	#content > section
+	{
+		box-sizing: border-box;
+		max-height: calc(100vh - 250px);
+		overflow-y: auto;
+		scrollbar-color: #d9d9d9 transparent;
+		scrollbar-width: thin;
+	}
+}
+
+/* ---------------------------------------------------------------------- */
+/*	Fluid layout for phones and small tablets
+/* ---------------------------------------------------------------------- */
+@media only screen and (max-width: 767px)
+{
+	#container
+	{
+		margin: 12px 12px 20px;
+		width: auto;
+	}
+	header
+	{
+		height: auto;
+		margin-bottom: 12px;
+	}
+	#logo
+	{
+		margin-left: 4px;
+	}
+	.about,
+	.personal-info
+	{
+		box-sizing: border-box;
+		float: none;
+		margin: 0;
+		padding: 20px 16px 0;
+		width: auto;
+	}
+	.about .photo-inner
+	{
+		float: none;
+		margin: 0 auto;
+	}
+	.personal-info
+	{
+		margin: 16px 16px 0;
+		min-height: 0;
+		padding: 16px 0 6px;
+	}
+	.personal-info li
+	{
+		display: flex;
+	}
+	.personal-info li label
+	{
+		flex: 0 0 82px;
+		padding-left: 0;
+	}
+	.personal-info li span
+	{
+		flex: 1;
+		float: none;
+		min-width: 0;
+		overflow-wrap: anywhere;
+		width: auto;
+	}
+	.menu
+	{
+		height: auto;
+		padding: 0;
+		width: auto;
+	}
+	.tabs
+	{
+		display: flex;
+		height: auto;
+		margin: 0;
+		position: static;
+	}
+	.tabs li
+	{
+		flex: 1;
+		float: none;
+		height: auto;
+		min-width: 0;
+	}
+	.tabs li > a
+	{
+		display: block;
+		font-size: 12px;
+		padding: 12px 0 10px;
+		width: auto;
+	}
+	.tabs li > a > i
+	{
+		font-size: 28px;
+		margin-bottom: 4px;
+	}
+	.tabs li.active
+	{
+		background: #fff !important;
+	}
+	#resume,
+	#projects,
+	#research
+	{
+		padding: 24px 16px;
+	}
+	#resume > .button
+	{
+		margin-left: -16px;
+	}
+	.timeline-section,
+	.skills-section,
+	.listings-section,
+	.left-heading,
+	.right-heading,
+	.timeline,
+	.timeline li .left,
+	.timeline li .right,
+	.contact-info,
+	.contact-form
+	{
+		box-sizing: border-box;
+		float: none;
+		padding-right: 0;
+		width: auto;
+	}
+	.right-heading
+	{
+		display: none;
+	}
+	.timeline li .right
+	{
+		margin: 12px 0 0 16px;
+	}
+	.timeline li .timelineUnit .timelineDate
+	{
+		display: block;
+		float: none;
+		font-size: 12px;
+		line-height: 16px;
+		margin: 0;
+		padding: 0;
+	}
+	.projects-browser
+	{
+		display: block;
+	}
+	.project-menu
+	{
+		display: none;
+	}
+	.project-detail .project-card
+	{
+		border-left: 1px solid #fdc750;
+		display: block;
+		margin-bottom: 28px;
+		padding-left: 14px;
+	}
+	.project-title
+	{
+		font-size: 16px;
+		line-height: 22px;
+	}
+	.project-impact
+	{
+		gap: 6px;
+		grid-template-columns: 1fr;
+	}
+	.project-impact div
+	{
+		align-items: baseline;
+		display: flex;
+		gap: 8px;
+		padding: 8px 12px;
+	}
+	.project-impact strong
+	{
+		flex: none;
+		font-size: 16px;
+		line-height: 20px;
+	}
+	.contact-info,
+	.contact-form
+	{
+		padding: 0 16px;
+	}
+	.form-row
+	{
+		gap: 0;
+		grid-template-columns: 1fr;
+	}
+	.contact-info ul
+	{
+		float: none;
+	}
+	form .input,
+	form textarea
+	{
+		box-sizing: border-box;
 	}
 }
