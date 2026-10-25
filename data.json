@@ -3,7 +3,7 @@
       "title": "Anik Datta",
       "header": {
           "name": "ANIK DATTA",
-          "title": "Software Engineer | AI Enthusiast",
+          "title": "Senior Software Engineer | AI Enthusiast",
           "social_text": "ALSO ON"
       },
       "footer": {
@@ -12,18 +12,17 @@
   },
   "profile": {
       "name": "Anik Datta",
-      "title": "Software Engineer",
-      "about": "Experienced internet enthusiast with 5+ years in high-performance backend systems, ML integration, GenAI features, microservices, Agile workflows, DevOps, and software optimization.",
-      "location": "Living and working in Dhaka.",
-      "photo": "images/photo.jpg",
-      "info": {
-          "Name": "Anik Datta",
-          "Alma mater": "Southeast University, Dhaka",
-          "Address": "Mirpur, Dhaka",
-          "Email": "auniikq@gmail.com",
-          "GitHub": "https://github.com/auniik/",
-          "LinkedIn": "https://www.linkedin.com/in/auniik"
-      },
+      "title": "Senior Software Engineer",
+      "career_start": "2018-11",
+      "about": "{years}+ years building backend systems, GenAI features and multi-tenant SaaS, from embedded firmware to production platforms. I lead small teams that ship fast with agentic AI workflows.",
+      "info": [
+          {"label": "Focus", "value": "Agentic AI · SaaS · IoT"},
+          {"label": "Education", "value": "BSc CSE, Southeast University"},
+          {"label": "Based in", "value": "Dhaka, Bangladesh"},
+          {"label": "Email", "value": "auniikq@gmail.com", "url": "mailto:auniikq@gmail.com"},
+          {"label": "GitHub", "value": "@auniik", "url": "https://github.com/auniik"},
+          {"label": "LinkedIn", "value": "in/auniik", "url": "https://www.linkedin.com/in/auniik"}
+      ],
       "socials": {
           "GitHub": "https://github.com/auniik",
           "LinkedIn": "https://www.linkedin.com/in/auniik",
@@ -33,8 +32,19 @@
   },
   "employment": [
         {
+            "position": "Senior Software Engineer",
+            "duration": "2026 - Running",
+            "company": "Portonics Limited",
+            "url": "https://portonics.com",
+            "description": [
+                "Leading SpaceOS, a multi-tenant SaaS for coworking, retail, kitchens, events and sports venues: rebuilt its shared core (catalog, customers, orders, money, inventory) with one teammate in 8 days, shipped a unified QR and barcode platform for till scans, door check-in, shelf labels and event tickets solo in 4 days, and helped a 4-engineer team take codes, ticketing and court bookings to production in 4 weeks.",
+                "Moved the team from Jira to Karmo, Portonics' in-house project management SaaS, saving $4K+ a month ($48K+ a year) in licensing.",
+                "Led the WisdomWear team behind CrossConnect, a voice-first prayer pendant with an AI companion showcased at Techsauce Summit; took the pendant firmware from first commit to recording and syncing audio over BLE in 3 weeks, storing ~29 hours of speech on 313 MB of flash."
+            ]
+        },
+        {
             "position": "Software Engineer",
-            "duration": "2021 - Running",
+            "duration": "2021 - 2026",
             "company": "Portonics Limited",
             "url": "https://portonics.com",
             "description": [
@@ -97,268 +107,459 @@
       }
   ],
   "skills": [
-      
+      { "group": "Languages", "items": [
+          {"name": "TypeScript", "color": "007ACC", "logo": "typescript"},
+          {"name": "Python", "color": "3670A0", "logo": "python"},
+          {"name": "PHP", "color": "777BB4", "logo": "php"},
+          {"name": "Go", "color": "00ADD8", "logo": "go"},
+          {"name": "C", "color": "00599C", "logo": "c"},
+          {"name": "Dart", "color": "0175C2", "logo": "dart"}
+      ] },
+      { "group": "Backend", "items": [
+          {"name": "Node.js", "color": "6DA55F", "logo": "nodedotjs"},
+          {"name": "Next.js", "color": "000000", "logo": "nextdotjs"},
+          {"name": "Laravel", "color": "FF2D20", "logo": "laravel"},
+          {"name": "FastAPI", "color": "005571", "logo": "fastapi"},
+          {"name": "Django", "color": "092E20", "logo": "django"},
+          {"name": "RabbitMQ", "color": "FF6600", "logo": "rabbitmq"}
+      ] },
+      { "group": "Data", "items": [
+          {"name": "PostgreSQL", "color": "316192", "logo": "postgresql"},
+          {"name": "Redis", "color": "DD0031", "logo": "redis"},
+          {"name": "Elasticsearch", "color": "005571", "logo": "elasticsearch"},
+          {"name": "Prisma", "color": "2D3748", "logo": "prisma"}
+      ] },
+      { "group": "AI", "items": [
+          {"name": "Claude Code", "color": "D97757", "logo": "claude"},
+          {"name": "Agentic workflows", "color": "5A4FCF"},
+          {"name": "Gemini & Vertex AI", "color": "8E75B2", "logo": "googlegemini"},
+          {"name": "LLM & RAG apps", "color": "10A37F"},
+          {"name": "PyTorch", "color": "EE4C2C", "logo": "pytorch"}
+      ] },
+      { "group": "Mobile & Embedded", "items": [
+          {"name": "Flutter", "color": "02569B", "logo": "flutter"},
+          {"name": "Zephyr RTOS", "color": "333333"},
+          {"name": "nRF & BLE", "color": "0082FC", "logo": "bluetooth"}
+      ] },
+      { "group": "Cloud & DevOps", "items": [
+          {"name": "AWS", "color": "232F3E"},
+          {"name": "Google Cloud", "color": "4285F4", "logo": "googlecloud"},
+          {"name": "Kubernetes", "color": "326CE5", "logo": "kubernetes"},
+          {"name": "Terraform", "color": "7B42BC", "logo": "terraform"},
+          {"name": "Supabase", "color": "3ECF8E", "logo": "supabase"},
+          {"name": "Vercel", "color": "000000", "logo": "vercel"},
+          {"name": "GitHub Actions", "color": "2671E5", "logo": "githubactions"},
+          {"name": "Datadog", "color": "632CA6", "logo": "datadog"}
+      ] }
   ],
   "projects": [
-    {
-        "class": "genai",
-        "title": "TrueApp | Persona-Based Recommendation System",
-        "category": "Machine Learning & AI",
-        "year": "2025",
-        "company": "Portonics Limited",
-        "impact": "60+ TPS • 33M+ events/month • 411K+ peak requests/hour",
-        "hook": "Led GenAI-powered recommendation service for telco app",
-        "tech_stack": [
-            "Python",
-            "Vertex AI",
-            "Vector Databases",
-            "GenAI",
-            "Google Cloud Platform",
-            "Embedding",
-            "Nextjs",
-            "Microservices",
-            "Postgresql",
-            "Redis"
-        ],
-        "type": "AI/ML Integration",
-        "responsibility": "Led the end-to-end development of a GenAI-powered, persona-driven recommendation system for a major telecom app, leveraging dynamic persona segmentation to deliver personalized user experiences at scale—handling over 60+ TPS, 33M+ events per month, and 411K+ peak requests per hour. Integrated a scheduled training pipeline for content generation, and automated audits. Additionally, built an offer-matching engine and a robust CMS to manage prompts, manual triggers, GenAI models, and persona centroids, enabling seamless orchestration of campaigns and content personalization workflows."
-    },
-    {
-        "class": "genai",
-        "title": "TrueApp | Multimodal Vector Search System",
-        "category": "Machine Learning & AI",
-        "year": "2024",
-        "company": "Portonics Limited",
-        "impact": "50+ TPS • Text & Image Search • High-Accuracy Matching",
-        "hook": "Cutting-edge multimodal vector search using Vertex AI, Enabled semantic search across diverse content types with advanced embedding techniques",
-        "tech_stack": [
-            "Vertex AI",
-            "Vector Database",
-            "Python",
-            "GenAi Integration",
-            "REST API",
-            "Google Cloud Platform",
-            "Embeddings",
-            "Postgresql",
-            "Redis"
-        ],
-        "type": "AI/ML Integration",
-        "responsibility": "Developed a multimodal vector search system, enabling dense / sparse based search across diverse content types such as text, images, and metadata using advanced embedding techniques. Designed and implemented a robust data pipeline to collect and preprocess data from various sources, with daily scheduled syncs to ensure freshness and consistency. The system supported real-time indexing and retrieval, enhancing content discoverability and user engagement across the platform."
-    },
-    {
-        "class": "backend",
-        "title": "Bdtickets | Payment Microservice",
-        "category": "Backend Systems",
-        "year": "2023",
-        "company": "Portonics Limited",
-        "impact": "Multi channel payment processing • 99.9% uptime",
-        "hook": "Integrated comprehensive APIs for Ticketing service platform",
-        "tech_stack": [
-            "Golang",
-            "Node.js",
-            "Nestjs",
-            "Microservices",
-            "API"
-        ],
-        "type": "Backend",
-        "responsibility": "Led the development of a high-performance payment microservice for a ticketing service platform, ensuring seamless integration with multiple payment gateways and channels. Implemented robust error handling, logging, and monitoring to maintain high availability and reliability. The service supported real-time transaction processing, enabling users to purchase tickets efficiently while maintaining compliance with industry standards."
-    },
-    {
-        "class": "backend",
-        "title": "PortPos App | FinTech Platform",
-        "category": "Backend Systems",
-        "year": "2023",
-        "company": "Portonics Limited",
-        "impact": "Millions of transactions daily • 99.9% uptime",
-        "hook": "Integrated comprehensive APIs for FinTech platform",
-        "tech_stack": [
-            "PHP",
-            "Symfony",
-            "Golang",
-            "Node.js",
-            "Typescript",
-            "Microservices",
-            "MySQL",
-            "API",
-            "RabbitMQ"
-        ],
-        "type": "Backend",
-        "responsibility": "Led the development of the PortPos app for a FinTech platform, ensuring high performance and reliability through robust API integrations. Worked on core features such as saved card management, secure payment processing, airtime recharge, and third-party service integration. Additionally, implemented key improvements aligned with PCI-DSS certification requirements, enhancing security across card handling, data storage, and transaction workflows to meet industry compliance standards."
-    },
-    {
-        "class": "devops",
-        "title": "Atom Store App | Pack Purchase History System",
-        "category": "Backend Systems",
-        "year": "2022",
-        "company": "Portonics Limited",
-        "impact": "30 days history • Faster Response",
-        "hook": "Developed pack purchase history API for telecom app",
-        "tech_stack": [
-            "Typescript",
-            "MongoDB",
-            "Kibana",
-            "Elasticsearch"
-        ],
-        "type": "Backend",
-        "responsibility": "Developed a robust pack purchase history API for a high-traffic telecom app, enabling users to view their purchase history for the last 30 days. Implemented comprehensive logging and monitoring using Kibana and Elasticsearch, ensuring high availability and performance under heavy load. Contributed to the backend APIs for Gamification features, enhancing user engagement and retention through personalized experiences."
-    },
-    {
-        "class": "devops",
-        "title": "Atom Store App | Code Refactoring and CI/CD Pipeline",
-        "category": "Backend Systems",
-        "year": "2021",
-        "company": "Portonics Limited",
-        "impact": "50% bug reduction • Faster deployments",
-        "hook": "Refactored legacy code and implemented comprehensive CI/CD pipeline",
-        "tech_stack": [
-            "Jenkins",
-            "Docker",
-            "Git",
-            "Kibana",
-            "Elasticsearch"
-        ],
-        "type": "Backend",
-        "responsibility": "Refactored legacy codebase and implemented a comprehensive CI/CD pipeline, leading to a 50% reduction in bugs and significantly faster, more reliable deployments. Additionally contributed to the backend APIs for Gamification features and enhanced the core middleware of a high-traffic telecom app, improving scalability, maintainability, and overall performance under heavy load."
-    },
-    {
-        "class": "fullstack",
-        "title": "Sendex - Enterprise Email Marketing System",
-        "category": "Full-Stack Development",
-        "year": "2020",
-        "company": "Gain Solutions Ltd",
-        "impact": "50K+ emails daily • 95%+ delivery rate • 30% CTR increase",
-        "hook": "Multi-tenant SAAS based email marketing application with comprehensive campaign management features.",
-        "tech_stack": [
-            "Laravel",
-            "Vuejs",
-            "MySQL",
-            "Mailgun",
-            "Amazon SES",
-            "SMTP",
-            "SendGrid"
-        ],
-        "type": "Full-stack Development",
-        "responsibility": "Led development of subscriber management, campaign creation, custom form builder, segments, imported and dynamic lists, template builder, and reporting systems."
-    },
-    {
-        "class": "fullstack",
-        "title": "Hospital Management System",
-        "category": "Full-Stack Development",
-        "company": "Smart Software Ltd.",
-        "year": "2019",
-        "impact": "3+ clinics adopted • 40% reduction in administrative workload • 99.8% system uptime",
-        "visit_site": "https://www.smartsoftware.com.bd/hospital-management",
-        "hook": "Built comprehensive Hospital Management System with Booking, Medical investigations, Pharmacy POS, Accounting, and Reporting modules. Adopted by 3+ clinics, achieving 40% reduction in administrative workload and 99.8% system uptime through collaborative development with medical professionals.",
-        "tech_stack": [
-            "Laravel",
-            "MySQL",
-            "JavaScript",
-            "Bootstrap",
-            "AJAX",
-            "JQuery"
-        ],
-        "type": "Full-stack Development",
-        "responsibility": "Developed booking system, medical investigations management, pharmacy POS, accounting integration, and comprehensive reporting for clinics."
-    },
-    {
-        "class": "fullstack",
-        "title": "Retail Management System",
-        "category": "Full-Stack Development",
-        "company": "Smart Software Ltd.",
-        "year": "2020",
-        "impact": "5+ retail stores adopted • 30% increase in sales efficiency • 99.9% system uptime",
-        "hook": "Developed comprehensive Retail Management System with POS, Inventory Management, Accounting, and Reporting modules. Adopted by 5+ retail stores, achieving 30% increase in sales efficiency and 99.9% system uptime through collaborative development with retail professionals.",
-        "responsibility": "Built inventory management system including purchase management, quotation system, sales processing, product return handling, accounting integration, and comprehensive reporting.",
-        "tech_stack": [
-            "Laravel",
-            "MySQL",
-            "JavaScript",
-            "Bootstrap",
-            "AJAX",
-            "JQuery"
-        ],
-        "link": "https://www.smartsoftware.com.bd/best-pos-software-in-bangladesh",
-        "type": "Full-stack Development"
-    },
-    {
-        "class": "fullstack",
-        "title": "Tekasaibd | Online exam system",
-        "category": "Full-Stack Development",
-        "year": "2020",
-        "company": "Freelance Project",
-        "impact": "1K+ users • 99.9% system uptime",
-        "description": "Innovative online examination platform designed for long-duration exams with features familiar to Bangladeshi educational curriculum.",
-        "responsibility": "Developed online exam system, social engagement features, participant management, news feed, publications, creativity submission, and comprehensive admin panel with reporting.",
-        "tech_stack": [
-            "PHP",
-            "MySQL",
-            "JavaScript",
-            "Bootstrap",
-            "AJAX"
-        ],
-        "type": "Full-stack Development"
-    }
-],
+      {
+          "type": "Multi-tenant SaaS",
+          "year": "2026",
+          "title": "SpaceOS",
+          "product": "Business-space platform",
+          "company": "Portonics Limited",
+          "hook": "Leading a multi-tenant SaaS that runs coworking spaces, retail, kitchens, events and sports venues from one dashboard and storefront.",
+          "impact": [
+              {
+                  "value": "8 days",
+                  "label": "core platform rebuilt"
+              },
+              {
+                  "value": "4 days",
+                  "label": "codes platform shipped solo"
+              },
+              {
+                  "value": "4 weeks",
+                  "label": "team milestone to production"
+              }
+          ],
+          "highlights": [
+              "Rebuilt the shared core (catalog, customers, orders, money, inventory) and moved each vertical onto it.",
+              "Built one QR and barcode platform for till scans, door check-in, shelf labels and event tickets.",
+              "Moved court bookings, customer sign-in, and Kitchen and Lunch onto the new core."
+          ],
+          "tech_stack": [
+              "Next.js",
+              "TypeScript",
+              "PostgreSQL",
+              "Prisma",
+              "Supabase",
+              "Vercel",
+              "Playwright"
+          ]
+      },
+      {
+          "type": "AI-native SaaS",
+          "year": "2026",
+          "title": "Karmo",
+          "product": "Project management platform",
+          "company": "Portonics Limited",
+          "url": "https://karmo.app",
+          "hook": "Multi-tenant project management SaaS (boards, sprints, releases, time tracking) that replaced Jira across the team.",
+          "impact": [
+              {
+                  "value": "$4K+",
+                  "label": "saved per month on Jira"
+              },
+              {
+                  "value": "$48K+",
+                  "label": "saved per year"
+              },
+              {
+                  "value": "MCP",
+                  "label": "AI agents manage tickets"
+              }
+          ],
+          "highlights": [
+              "Built the OAuth 2.1 and MCP server so AI agents like Claude can read and update tickets.",
+              "Built the v1 REST API, API keys, custom fields, permissions and partner-organisation sharing.",
+              "Built a Google Sheets add-on that imports tickets on a schedule."
+          ],
+          "tech_stack": [
+              "Next.js",
+              "TypeScript",
+              "Supabase",
+              "Prisma",
+              "MCP",
+              "OAuth 2.1",
+              "Apps Script"
+          ]
+      },
+      {
+          "type": "IoT & Embedded",
+          "year": "2025 - 2026",
+          "title": "CrossConnect Prayer Pendant",
+          "product": "WisdomWear",
+          "company": "Portonics Limited",
+          "hook": "A voice-first wearable that turns spoken prayers into journal entries, paired with Pete, an AI companion. Showcased at Techsauce Summit.",
+          "impact": [
+              {
+                  "value": "~29 hours",
+                  "label": "of audio on 313 MB flash"
+              },
+              {
+                  "value": "~10:1",
+                  "label": "Opus compression"
+              },
+              {
+                  "value": "~15 KB/s",
+                  "label": "BLE sync speed"
+              }
+          ],
+          "highlights": [
+              "Led the team; built the nRF54 firmware on Zephyr with Opus recording, crash-safe flash storage and over-the-air updates.",
+              "Designed the BLE sync protocol and Flutter client, with first audio synced 3 weeks after the first commit.",
+              "Added real-time Gemini Live voice replies for Pete in the app."
+          ],
+          "tech_stack": [
+              "C",
+              "Zephyr RTOS",
+              "nRF54",
+              "BLE",
+              "Flutter",
+              "Gemini",
+              "AWS"
+          ]
+      },
+      {
+          "type": "AI/ML Integration",
+          "year": "2025",
+          "title": "Persona-Based Recommendation System",
+          "product": "TrueApp",
+          "company": "Portonics Limited",
+          "hook": "GenAI recommendations personalised by user persona for a major telecom app.",
+          "impact": [
+              {
+                  "value": "60+ TPS",
+                  "label": "sustained throughput"
+              },
+              {
+                  "value": "33M+",
+                  "label": "events per month"
+              },
+              {
+                  "value": "411K+",
+                  "label": "peak requests per hour"
+              }
+          ],
+          "highlights": [
+              "Led the service end to end, segmenting users into dynamic personas.",
+              "Built a scheduled training pipeline for content generation, with automated audits.",
+              "Built an offer-matching engine and a CMS for prompts, models and persona centroids."
+          ],
+          "tech_stack": [
+              "Python",
+              "Vertex AI",
+              "Vector DB",
+              "Next.js",
+              "PostgreSQL",
+              "Redis"
+          ]
+      },
+      {
+          "type": "AI/ML Integration",
+          "year": "2024",
+          "title": "Multimodal Vector Search",
+          "product": "TrueApp",
+          "company": "Portonics Limited",
+          "hook": "Semantic search across text and images using Vertex AI embeddings.",
+          "impact": [
+              {
+                  "value": "50+ TPS",
+                  "label": "sustained throughput"
+              },
+              {
+                  "value": "Text + image",
+                  "label": "multimodal search"
+              },
+              {
+                  "value": "Dense + sparse",
+                  "label": "hybrid retrieval"
+              }
+          ],
+          "highlights": [
+              "Built dense and sparse vector search across text, images and metadata.",
+              "Built a data pipeline with daily syncs to keep the index fresh.",
+              "Enabled real-time indexing and retrieval for better content discovery."
+          ],
+          "tech_stack": [
+              "Python",
+              "Vertex AI",
+              "Vector DB",
+              "PostgreSQL",
+              "Redis"
+          ]
+      },
+      {
+          "type": "Backend",
+          "year": "2023",
+          "title": "Payment Microservice",
+          "product": "Bdtickets",
+          "company": "Portonics Limited",
+          "hook": "Payment service behind a ticketing platform.",
+          "impact": [
+              {
+                  "value": "99.9%",
+                  "label": "uptime"
+              },
+              {
+                  "value": "Multi-channel",
+                  "label": "payment gateways"
+              }
+          ],
+          "highlights": [
+              "Led a payment microservice integrating multiple gateways and channels.",
+              "Added error handling, logging and monitoring for high availability.",
+              "Processed ticket purchases in real time, within industry compliance standards."
+          ],
+          "tech_stack": [
+              "Go",
+              "Node.js",
+              "NestJS",
+              "Microservices"
+          ]
+      },
+      {
+          "type": "Backend",
+          "year": "2023",
+          "title": "FinTech Platform",
+          "product": "PortPos App",
+          "company": "Portonics Limited",
+          "hook": "APIs for a payments app handling cards, recharges and third-party services.",
+          "impact": [
+              {
+                  "value": "Millions",
+                  "label": "of transactions daily"
+              },
+              {
+                  "value": "99.9%",
+                  "label": "uptime"
+              },
+              {
+                  "value": "PCI-DSS",
+                  "label": "compliance hardening"
+              }
+          ],
+          "highlights": [
+              "Led API work for saved cards, secure payments, airtime recharge and third-party services.",
+              "Hardened card handling, data storage and transaction flows for PCI-DSS certification."
+          ],
+          "tech_stack": [
+              "PHP",
+              "Symfony",
+              "Go",
+              "Node.js",
+              "TypeScript",
+              "MySQL",
+              "RabbitMQ"
+          ]
+      },
+      {
+          "type": "Full-stack",
+          "year": "2020",
+          "title": "Enterprise Email Marketing",
+          "product": "Sendex",
+          "company": "Gain Solutions Ltd.",
+          "hook": "Multi-tenant SaaS for planning, sending and measuring email campaigns.",
+          "impact": [
+              {
+                  "value": "50K+",
+                  "label": "emails daily"
+              },
+              {
+                  "value": "95%+",
+                  "label": "delivery rate"
+              },
+              {
+                  "value": "30%",
+                  "label": "CTR increase"
+              }
+          ],
+          "highlights": [
+              "Led subscriber management, campaigns, segments, and imported and dynamic lists.",
+              "Built the form builder, template builder and reporting."
+          ],
+          "tech_stack": [
+              "Laravel",
+              "Vue.js",
+              "MySQL",
+              "Mailgun",
+              "Amazon SES",
+              "SendGrid"
+          ]
+      },
+      {
+          "type": "Full-stack",
+          "year": "2020",
+          "title": "Retail Management System",
+          "company": "Smart Software Ltd.",
+          "url": "https://www.smartsoftware.com.bd/best-pos-software-in-bangladesh",
+          "hook": "POS, inventory, accounting and reporting for retail stores.",
+          "impact": [
+              {
+                  "value": "5+",
+                  "label": "stores adopted"
+              },
+              {
+                  "value": "30%",
+                  "label": "sales efficiency gain"
+              },
+              {
+                  "value": "99.9%",
+                  "label": "uptime"
+              }
+          ],
+          "highlights": [
+              "Built purchasing, quotations, sales and product returns.",
+              "Integrated accounting and reporting."
+          ],
+          "tech_stack": [
+              "Laravel",
+              "MySQL",
+              "JavaScript",
+              "Bootstrap"
+          ]
+      },
+      {
+          "type": "Full-stack",
+          "year": "2020",
+          "title": "Online Exam System",
+          "product": "Tekasaibd",
+          "company": "Freelance",
+          "hook": "Exam and community platform for students.",
+          "impact": [
+              {
+                  "value": "1K+",
+                  "label": "users"
+              },
+              {
+                  "value": "99.9%",
+                  "label": "uptime"
+              }
+          ],
+          "highlights": [
+              "Built online exams, participant management and an admin panel with reports.",
+              "Added a news feed, publications and creative submissions."
+          ],
+          "tech_stack": [
+              "PHP",
+              "MySQL",
+              "JavaScript",
+              "Bootstrap"
+          ]
+      },
+      {
+          "type": "Full-stack",
+          "year": "2019",
+          "title": "Hospital Management System",
+          "company": "Smart Software Ltd.",
+          "url": "https://www.smartsoftware.com.bd/hospital-management",
+          "hook": "Booking, investigations, pharmacy POS, accounting and reporting for clinics.",
+          "impact": [
+              {
+                  "value": "3+",
+                  "label": "clinics adopted"
+              },
+              {
+                  "value": "40%",
+                  "label": "less admin work"
+              },
+              {
+                  "value": "99.8%",
+                  "label": "uptime"
+              }
+          ],
+          "highlights": [
+              "Built booking, medical investigations and a pharmacy POS.",
+              "Integrated accounting and reporting, working directly with doctors."
+          ],
+          "tech_stack": [
+              "Laravel",
+              "MySQL",
+              "JavaScript",
+              "Bootstrap"
+          ]
+      }
+  ],
   "papers": [
-    {
-      "title": "Reducing Computational Complexity in CNNs: A Focus on VGG19 Pruning and Quantization",
-      "year": "2025",
-      "subtitle": "Published in International Journal of Advanced Computer Science and Applications(ijacsa), Volume 16 Issue 6, 2025",
-      "description": "CNNs like VGG19 excel in computer vision but demand significant computational resources, hindering low-end device use. This study explores enhancing VGG19 efficiency via model compression: pruning (structured and unstructured) and quantization (8-bit and 4-bit QAT). Tested on MNIST, CIFAR-10, and Oxford-IIIT Pet, methods reduced model size by up to 75% with lowered computational costs. 8-bit QAT notably compressed systems without sacrificing speed or accuracy. However, 4-bit QAT, despite 48% compression, reduced accuracy on complex datasets. Structured pruning sped up inference, and unstructured pruning improved accuracy, simplifying VGG19 for edge device implementation while maintaining prediction quality.",
-      "pdf_link": "papers/1.pdf",
-      "authors": [
-        {
-          "name": "Md. Mijanur Rahman",
-          "website": "#"
-        },
-        {
-          "name": "Anik Datta",
-          "website": "http://auniik.github.io",
-          "linkedin": "https://www.linkedin.com/in/auniik",
-          "github": "https://github.com/auniik/"
-        },
-        {
-          "name": "Md. Sabiruzzaman",
-          "website": "#"
-        },
-        {
-          "name": "Md Samim Ahmed Bin Hossain",
-          "website": "#"
-        }
-      ]
-    },
-    {
-      "title": "Multi-Magnification Attention Fusion for Resource-Efficient Breast Cancer Classification with Integrated Grad-CAM Visualization",
-      "year": "2025",
-      "subtitle": "Unpublished paper",
-      "description": "This study develops a lightweight multi-magnification framework for clinical breast cancer classification, using depthwise separable convolutions and cross-magnification attention. Evaluated on BreakHis, it achieved 93.78% accuracy with 98% fewer parameters than traditional methods and 8.35ms inference time. The framework integrates interpretable Grad-CAM visualizations, enabling effective real-time screening in resource-constrained environments.",
-      "pdf_link": "papers/2.pdf",
-      "authors": [
-        {
-          "name": "Md. Mijanur Rahman",
-          "website": "#"
-        },
-        {
-          "name": "Anik Datta",
-          "website": "http://auniik.github.io",
-          "linkedin": "https://www.linkedin.com/in/auniik",
-          "github": "https://github.com/auniik/"
-        },
-        {
-          "name": "Md. Sabiruzzaman",
-          "website": "#"
-        },
-        {
-          "name": "Md Samim Ahmed Bin Hossain",
-          "website": "#"
-        }
-      ]
-    }
+      {
+          "type": "Journal article",
+          "year": "2025",
+          "title": "Reducing Computational Complexity in CNNs: A Focus on VGG19 Pruning and Quantization",
+          "venue": "IJACSA · Volume 16, Issue 6",
+          "journal": "International Journal of Advanced Computer Science and Applications",
+          "volume": "16",
+          "issue": "6",
+          "doi": "10.14569/IJACSA.2025.01606105",
+          "url": "https://thesai.org/Downloads/Volume16No6/Paper_105-Reducing_Computational_Complexity_in_CNNs.pdf",
+          "description": "CNNs like VGG19 excel in computer vision but demand significant computational resources, hindering low-end device use. This study explores enhancing VGG19 efficiency via model compression: pruning (structured and unstructured) and quantization (8-bit and 4-bit QAT). Tested on MNIST, CIFAR-10, and Oxford-IIIT Pet, methods reduced model size by up to 75% with lowered computational costs. 8-bit QAT notably compressed systems without sacrificing speed or accuracy. However, 4-bit QAT, despite 48% compression, reduced accuracy on complex datasets. Structured pruning sped up inference, and unstructured pruning improved accuracy, simplifying VGG19 for edge device implementation while maintaining prediction quality.",
+          "pdf_link": "papers/1.pdf",
+          "authors": [
+              "Md. Mijanur Rahman",
+              "Anik Datta",
+              "Md. Sabiruzzaman",
+              "Md Samim Ahmed Bin Hossain"
+          ]
+      },
+      {
+          "type": "Preprint",
+          "year": "2025",
+          "title": "Multi-Magnification Attention Fusion for Resource-Efficient Breast Cancer Classification with Integrated Grad-CAM Visualization",
+          "description": "This study develops a lightweight multi-magnification framework for clinical breast cancer classification, using depthwise separable convolutions and cross-magnification attention. Evaluated on BreakHis, it achieved 93.78% accuracy with 98% fewer parameters than traditional methods and 8.35ms inference time. The framework integrates interpretable Grad-CAM visualizations, enabling effective real-time screening in resource-constrained environments.",
+          "pdf_link": "papers/2.pdf",
+          "authors": [
+              "Md. Mijanur Rahman",
+              "Anik Datta",
+              "Md. Sabiruzzaman",
+              "Md Samim Ahmed Bin Hossain"
+          ]
+      }
   ],
   "contact": {
       "address": "Mirpur, Dhaka, Bangladesh",
       "email": "auniikq@gmail.com",
       "phone": "+880182-7764539",
-      "website": "https://auniik.github.io"
+      "website": "https://4nik.com"
   }
 }

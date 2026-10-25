@@ -7,7 +7,7 @@ jQuery(document).ready(function() {
 	// Logo
 	var $logo 	= $('#logo');
 
-    if (location.href.indexOf("#") != -1) {
+    if (location.hash && location.hash != "#profile") {
         $logo.show();
     }
 	// Show logo 
@@ -66,6 +66,23 @@ jQuery(document).ready(function() {
 	  tabActiveClass	:'active',
 	});
 
+	// Keep the active tab in the URL so reloads and back/forward survive.
+	// pushState instead of easytabs' updateHash avoids the browser jumping to the panel.
+	$content.bind('easytabs:after', function(e, $tab, $panel) {
+		var hash = '#' + $panel.attr('id');
+		if ((location.hash || '#profile') != hash) {
+			history.pushState(null, '', hash);
+		}
+	});
+	$(window).bind('popstate', function() {
+		var hash = location.hash || '#profile';
+		$content.easytabs('select', hash);
+		$logo[hash == '#profile' ? 'fadeOut' : 'fadeIn']('slow');
+	});
+	if (location.hash) {
+		window.scrollTo(0, 0);
+	}
+
 	
 	// Hover menu effect
 	$content.find('.tabs li a').hover(
@@ -76,38 +93,6 @@ jQuery(document).ready(function() {
 		}
 	);
 
-	// Menu Navigation
-	 $(".menu .tabs").carouFredSel({
-        responsive          : true,
-        direction           : "left",
- 	    circular: false,
-    	infinite: false,
-        pagination  		: "#menu-controls",  
-        auto    			: false,
-        scroll 			: {
-            items           : 1,
-            duration        : 300,                        
-            wipe    : true
-        },
-		prev	: {	
-			button	: "#menu-prev",
-			key		: "right"
-		},
-		next	: { 
-			button	: "#menu-next",
-			key		: "left"
-		},
-	    swipe: {
-	        onTouch: true
-	    },
-        items: {
-            width: 140,
-            visible: {
-              min: 2,
-              max: 5
-            }
-        }           
-    });
 	
 	/* ---------------------------------------------------------------------- */
 	/*	Cats Filter
@@ -178,64 +163,81 @@ jQuery(document).ready(function() {
 	/* ---------------------------------------------------------------------- */
 	/*	Contact Form
 	/* ---------------------------------------------------------------------- */
-	
-	// Needed variables
-	var $contactform 	= $('#contactform'),
-		$success		= 'Your message has been sent. Thank you!';
-		
-	// $contactform.submit(function(){
-	// 	$.ajax({
-	// 	   type: "POST",
-	// 	   url: "php/contact.php",
-	// 	   data: $(this).serialize(),
-	// 	   success: function(msg)
-	// 	   {
-	// 			if(msg == 'SEND'){
-	// 				response = '<div class="success">'+ $success +'</div>';
-	// 			}
-	// 			else{
-	// 				response = '<div class="error">'+ msg +'</div>';
-	// 			}
-	// 			// Hide any previous response text
-	// 			$(".error,.success").remove();
-	// 			// Show response message
-	// 			$contactform.prepend(response);
-	// 		}
-	// 	 });
-	// 	return false;
-	// });	
 
 	var form = document.getElementById("contactform");
-  
-	async function handleSubmit(event) {
-		event.preventDefault();
-		var status = document.getElementById("my-form-status");
-		var data = new FormData(event.target);
-		
-		fetch(event.target.action, {
-			method: form.method,
-			body: data,
-			headers: {
-				'Accept': 'application/json'
-			}
-		}).then(response => {
-			if (response.ok) {
-				status.innerHTML = "Thanks for your submission!";
-				form.reset()
-			} else {
-				response.json().then(data => {
-				if (Object.hasOwn(data, 'errors')) {
-					status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
-				} else {
-					status.innerHTML = "Oops! There was a problem submitting your form"
-				}
-				})
-			}
-		}).catch(error => {
-			status.innerHTML = "Oops! There was a problem submitting your form"
-		});
+	var button = document.getElementById("my-form-button");
+	var status = document.getElementById("my-form-status");
+
+	// Returns the problem with a field, or "" when it is fine
+	function fieldError(field) {
+		var value = field.value.trim();
+		if (!value) return "Please fill this in.";
+		if (field.type === "email" && field.validity.typeMismatch) return "That email address doesn't look right.";
+		if (field.minLength > 0 && value.length < field.minLength) return "A little more detail, please (at least " + field.minLength + " characters).";
+		return "";
 	}
-	form.addEventListener("submit", handleSubmit)
+
+	function showError(field) {
+		var message = fieldError(field);
+		field.classList.toggle("invalid", !!message);
+		field.parentNode.querySelector(".field-error").textContent = message;
+		return !message;
+	}
+
+	var fields = form.querySelectorAll("[required]");
+	fields.forEach(function(field) {
+		// Re-check as they type, but only once a field has been flagged
+		field.addEventListener("input", function() {
+			if (field.classList.contains("invalid")) showError(field);
+		});
+	});
+
+	function setStatus(text, type) {
+		status.innerHTML = text;
+		status.className = type || "";
+	}
+
+	form.addEventListener("submit", function(event) {
+		event.preventDefault();
+
+		var valid = true;
+		fields.forEach(function(field) { valid = showError(field) && valid; });
+		if (!valid) {
+			form.querySelector(".invalid").focus();
+			return;
+		}
+
+		var name = form.elements.name.value.trim();
+		form.elements._subject.value = "Portfolio message from " + name;
+		button.disabled = true;
+		button.textContent = "Sending…";
+		setStatus("");
+
+		fetch(form.action, {
+			method: form.method,
+			body: new FormData(form),
+			headers: { "Accept": "application/json" }
+		}).then(function(response) {
+			if (response.ok) {
+				form.reset();
+				setStatus("Thanks, " + name.split(" ")[0] + "! Your message is on its way. I'll reply soon.", "success");
+				return;
+			}
+			return response.json().then(function(data) {
+				var detail = data && data.errors ? data.errors.map(function(e) { return e.message; }).join(", ") : "";
+				throw new Error(detail);
+			});
+		}).catch(function(error) {
+			// main.js puts the address from data.json on the form
+			var mail = form.dataset.email;
+			setStatus((error.message ? error.message + ". " : "Couldn't send your message right now. ") +
+				(mail ? 'You can also email me at <a href="mailto:' + mail + '">' + mail + '</a>.' : ''), "error");
+		}).then(function() {
+			button.disabled = false;
+			button.textContent = "Send message";
+		});
+	});
+
 	/* ---------------------------------------------------------------------- */
 	/*	Google Maps
 	/* ---------------------------------------------------------------------- */
