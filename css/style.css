@@ -2245,3 +2245,104 @@ div.footer .copyright
 		box-sizing: border-box;
 	}
 }
+
+/* ---------------------------------------------------------------------- */
+/*	Loading skeletons, shown until data.json has been rendered
+/* ---------------------------------------------------------------------- */
+.skeleton
+{
+	animation: sk-shimmer 1.3s linear infinite;
+	background: rgba(255, 255, 255, 0.35) linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent) no-repeat;
+	background-position: -200px 0;
+	background-size: 200px 100%;
+	border-radius: 3px;
+	display: inline-block;
+	vertical-align: middle;
+}
+#logo .skeleton
+{
+	background-color: rgba(0, 0, 0, 0.08);
+}
+body:not(.is-loading) .skeleton
+{
+	display: none;
+}
+.sk-logo
+{
+	height: 26px;
+	width: 200px;
+}
+.sk-tagline
+{
+	height: 12px;
+	width: 260px;
+}
+.sk-name
+{
+	height: 30px;
+	width: 230px;
+}
+.sk-title
+{
+	height: 16px;
+	width: 170px;
+}
+/* inline-block, not block: block boxes run underneath the floated photo */
+.sk-line
+{
+	height: 11px;
+	margin: 5px 0;
+	max-width: 100%;
+	width: 250px;
+}
+.sk-line.sk-short
+{
+	width: 150px;
+}
+/* The info panel styles every span in a row (float, fixed width); undo that for the bars */
+.personal-info li .skeleton
+{
+	float: none;
+	height: 12px;
+	padding: 0;
+}
+.personal-info li .sk-label
+{
+	width: 70px;
+}
+.personal-info li .sk-value
+{
+	width: 130px;
+}
+@keyframes sk-shimmer
+{
+	to { background-position: 400px 0; }
+}
+
+/* Panels that are still empty while loading, for visitors who land on a tab directly */
+body.is-loading :is(.timeline, .skill-groups, .project-detail, .papers-list):empty
+{
+	animation: sk-pulse 1.1s ease-in-out infinite alternate;
+	background: repeating-linear-gradient(#f0f0f0 0 12px, transparent 12px 26px);
+	border-radius: 3px;
+	min-height: 156px;
+	width: 100%;
+}
+body.is-loading .project-menu:empty
+{
+	animation: sk-pulse 1.1s ease-in-out infinite alternate;
+	background: repeating-linear-gradient(#f0f0f0 0 30px, transparent 30px 44px);
+	min-height: 300px;
+}
+@keyframes sk-pulse
+{
+	to { opacity: 0.45; }
+}
+@media (prefers-reduced-motion: reduce)
+{
+	.skeleton,
+	body.is-loading :is(.timeline, .skill-groups, .project-detail, .papers-list, .project-menu):empty
+	{
+		animation: none;
+	}
+}
